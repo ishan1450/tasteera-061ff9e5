@@ -15,6 +15,8 @@ import ambMusic from "@/assets/ambiance_music.jpg";
 import logoAsset from "@/assets/tasteera_logo.asset.json";
 import foodMenuAsset from "@/assets/tasteera_food_menu.asset.json";
 import drinksMenuAsset from "@/assets/tasteera_drinks_menu.asset.json";
+import foodMenuCover from "@/assets/tasteera_food_menu_cover.asset.json";
+import drinksMenuCover from "@/assets/tasteera_drinks_menu_cover.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -237,29 +239,25 @@ function TasteeraHome() {
             barista coffee, mocktails and fresh-pressed juices.
           </p>
 
-          <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
-            <a
-              href={foodMenuAsset.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border-b border-gold/40 pb-1 text-sm uppercase tracking-[0.22em] text-forest transition hover:border-gold hover:text-terracotta"
-            >
-              <BookOpen className="h-4 w-4 text-gold" />
-              <span>Food Menu</span>
-              <span className="text-gold transition group-hover:translate-x-1">→</span>
-            </a>
-            <span aria-hidden className="hidden h-px w-10 bg-border sm:block" />
-            <a
-              href={drinksMenuAsset.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border-b border-gold/40 pb-1 text-sm uppercase tracking-[0.22em] text-forest transition hover:border-gold hover:text-terracotta"
-            >
-              <GlassWater className="h-4 w-4 text-gold" />
-              <span>Drinks Menu</span>
-              <span className="text-gold transition group-hover:translate-x-1">→</span>
-            </a>
+          <div className="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
+            <MenuCard
+              icon={BookOpen}
+              label="Food Menu"
+              caption="Indian · Pan-Asian · Continental"
+              cover={foodMenuCover.url}
+              pdfUrl={foodMenuAsset.url}
+            />
+            <MenuCard
+              icon={GlassWater}
+              label="Drinks Menu"
+              caption="Coffee · Mocktails · Juices"
+              cover={drinksMenuCover.url}
+              pdfUrl={drinksMenuAsset.url}
+            />
           </div>
+          <p className="mt-6 text-xs text-muted-foreground">
+            Opens the PDF in a new tab. Tap a card to download if your browser doesn&apos;t preview it.
+          </p>
         </div>
       </section>
 
@@ -382,6 +380,60 @@ function InfoRow({ icon: Icon, title, children }: { icon: React.ElementType; tit
     </div>
   );
 }
+
+function MenuCard({
+  icon: Icon, label, caption, cover, pdfUrl,
+}: {
+  icon: React.ElementType;
+  label: string;
+  caption: string;
+  cover: string;
+  pdfUrl: string;
+}) {
+  const handleOpen = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Resolve a fully-qualified URL so the new tab keeps the path even when
+    // the page is loaded inside an editor iframe (Safari sometimes drops
+    // the path on relative target=_blank navigations from an iframe).
+    if (typeof window === "undefined") return;
+    e.preventDefault();
+    const absolute = new URL(pdfUrl, window.location.origin).toString();
+    window.open(absolute, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <a
+      href={pdfUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={handleOpen}
+      className="group relative flex overflow-hidden rounded-2xl border border-border bg-card text-left shadow-soft transition hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-elegant"
+      aria-label={`Open ${label} PDF in a new tab`}
+    >
+      <div className="relative h-32 w-24 shrink-0 overflow-hidden bg-muted sm:h-36 sm:w-28">
+        <img
+          src={cover}
+          alt={`${label} cover preview`}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-y-0 right-0 w-1 bg-gradient-to-l from-black/15 to-transparent" />
+      </div>
+      <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 p-5">
+        <span className="inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.22em] text-gold">
+          <Icon className="h-3.5 w-3.5" />
+          PDF Menu
+        </span>
+        <span className="font-display text-2xl text-forest">{label}</span>
+        <span className="text-xs text-muted-foreground">{caption}</span>
+        <span className="mt-1 text-[0.7rem] uppercase tracking-[0.22em] text-terracotta transition group-hover:translate-x-1">
+          Open →
+        </span>
+      </div>
+    </a>
+  );
+}
+
+
 
 function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean) => void; scrolled: boolean }) {
   const links = [
