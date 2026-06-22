@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
-  Phone, MapPin, Clock, Utensils, Wine, Car, Leaf, Music2, Menu, X,
+  Phone, MapPin, Clock, Utensils, Car, Leaf, Music2, Menu, X,
   ChevronDown, Instagram, Facebook, Twitter, FileText, ExternalLink,
 } from "lucide-react";
 
