@@ -9,11 +9,6 @@ import heroImg from "@/assets/hero_restaurant.jpg";
 import interiorAsset from "@/assets/tasteera_interior.asset.json";
 import pastaAsset from "@/assets/tasteera_pasta.asset.json";
 import brunchAsset from "@/assets/tasteera_brunch.asset.json";
-import dishDimsum from "@/assets/dish_dimsum.jpg";
-import dishHakka from "@/assets/dish_hakka.jpg";
-import dishJamun from "@/assets/dish_jamun.jpg";
-import dishDal from "@/assets/dish_dal.jpg";
-import dishPaneer from "@/assets/dish_paneer.jpg";
 import ambLamps from "@/assets/ambiance_lamps.jpg";
 import ambTable from "@/assets/ambiance_table.jpg";
 import ambMusic from "@/assets/ambiance_music.jpg";
@@ -32,13 +27,6 @@ export const Route = createFileRoute("/")({
   component: TasteeraHome,
 });
 
-const dishes = [
-  { name: "Dim Sum Platter", tag: "Hero Dish", img: dishDimsum, desc: "Delicate hand-folded parcels, kissed with chili oil and steam." },
-  { name: "Hakka Noodles", tag: "Pan-Asian", img: dishHakka, desc: "Wok-tossed silk threads, smoky, slick, and impossible to share." },
-  { name: "Spiced Jamun Cooler", tag: "Signature Sip", img: dishJamun, desc: "Black jamun, cracked pepper, mint — a Gurugram summer in a glass." },
-  { name: "Dal-E-Tasteera", tag: "House Special", img: dishDal, desc: "Slow-simmered overnight, finished with cream and a whisper of smoke." },
-  { name: "Kadhai Paneer", tag: "Indian Classic", img: dishPaneer, desc: "Roasted spices, blistered peppers, paneer that holds its own." },
-];
 
 const galleryItems = [
   { img: interiorAsset.url, label: "The Dining Room", span: "md:col-span-2 md:row-span-2" },
@@ -157,45 +145,8 @@ function TasteeraHome() {
         </div>
       </section>
 
-      {/* SIGNATURE DISHES */}
-      <section id="menu" className="relative bg-forest py-28 text-cream md:py-36">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="text-center reveal">
-            <span className="gold-divider">Signature Dishes</span>
-            <h2 className="mt-6 font-display text-4xl md:text-6xl text-cream text-balance">
-              Plated like art.<br/>Built to be devoured.
-            </h2>
-          </div>
 
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {dishes.map((d, i) => (
-              <article
-                key={d.name}
-                className={`reveal group relative overflow-hidden rounded-3xl bg-card text-foreground shadow-elegant ${i === 0 ? "lg:col-span-2 lg:row-span-2" : ""}`}
-              >
-                <div className={`relative overflow-hidden ${i === 0 ? "aspect-[16/13]" : "aspect-[4/5]"}`}>
-                  <img
-                    src={d.img}
-                    alt={d.name}
-                    loading="lazy"
-                    width={900}
-                    height={1100}
-                    className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                  <span className="absolute left-5 top-5 rounded-full bg-gold/95 px-3 py-1 text-[0.65rem] font-medium uppercase tracking-[0.2em] text-forest">
-                    {d.tag}
-                  </span>
-                  <div className="absolute inset-x-0 bottom-0 p-6 text-cream">
-                    <h3 className={`font-display ${i === 0 ? "text-4xl md:text-5xl" : "text-2xl md:text-3xl"} text-cream`}>{d.name}</h3>
-                    <p className={`mt-2 ${i === 0 ? "text-base md:text-lg" : "text-sm"} text-cream/85 max-w-md`}>{d.desc}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* AMBIANCE / GALLERY */}
       <section id="ambiance" className="relative py-28 md:py-36">
