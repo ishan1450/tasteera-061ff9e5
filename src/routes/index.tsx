@@ -110,7 +110,7 @@ function TasteeraHome() {
             Where every plate tells a story.
           </p>
           <p className="mt-3 max-w-xl text-sm text-cream/65 md:text-base animate-float-up" style={{ animationDelay: "0.55s" }}>
-            Indian · Pan-Asian · Continental · Full Bar · Live Music
+            Indian · Pan-Asian · Continental · Coffee & Mocktails · Live Music
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row animate-float-up" style={{ animationDelay: "0.7s" }}>
