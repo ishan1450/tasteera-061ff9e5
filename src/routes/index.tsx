@@ -350,8 +350,13 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-soft" : "bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#top" className={`font-display text-2xl font-semibold tracking-wide transition-colors ${scrolled ? "text-forest" : "text-cream"}`}>
-          Tasteéra
+        <a href="#top" className="flex items-center gap-3" aria-label="Tasteera home">
+          <span className={`grid place-items-center overflow-hidden rounded-full ring-1 transition-all ${scrolled ? "h-11 w-11 bg-cream ring-forest/15" : "h-12 w-12 bg-cream/95 ring-cream/30 shadow-soft"}`}>
+            <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
+          </span>
+          <span className={`font-display text-xl font-semibold tracking-wide transition-colors ${scrolled ? "text-forest" : "text-cream"}`}>
+            Tasteéra
+          </span>
         </a>
         <nav className="hidden items-center gap-9 md:flex">
           {links.map((l) => (
