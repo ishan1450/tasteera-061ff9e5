@@ -17,6 +17,26 @@ import foodMenuAsset from "@/assets/tasteera_food_menu.asset.json";
 import drinksMenuAsset from "@/assets/tasteera_drinks_menu.asset.json";
 import foodMenuCover from "@/assets/tasteera_food_menu_cover.asset.json";
 import drinksMenuCover from "@/assets/tasteera_drinks_menu_cover.asset.json";
+import foodMenuPage1 from "@/assets/tasteera_food_menu_page_1.asset.json";
+import foodMenuPage2 from "@/assets/tasteera_food_menu_page_2.asset.json";
+import drinksMenuPage1 from "@/assets/tasteera_drinks_menu_page_1.asset.json";
+import drinksMenuPage2 from "@/assets/tasteera_drinks_menu_page_2.asset.json";
+import drinksMenuPage3 from "@/assets/tasteera_drinks_menu_page_3.asset.json";
+import drinksMenuPage4 from "@/assets/tasteera_drinks_menu_page_4.asset.json";
+import drinksMenuPage5 from "@/assets/tasteera_drinks_menu_page_5.asset.json";
+import drinksMenuPage6 from "@/assets/tasteera_drinks_menu_page_6.asset.json";
+import drinksMenuPage7 from "@/assets/tasteera_drinks_menu_page_7.asset.json";
+import drinksMenuPage8 from "@/assets/tasteera_drinks_menu_page_8.asset.json";
+import drinksMenuPage9 from "@/assets/tasteera_drinks_menu_page_9.asset.json";
+import drinksMenuPage10 from "@/assets/tasteera_drinks_menu_page_10.asset.json";
+import drinksMenuPage11 from "@/assets/tasteera_drinks_menu_page_11.asset.json";
+import drinksMenuPage12 from "@/assets/tasteera_drinks_menu_page_12.asset.json";
+import drinksMenuPage13 from "@/assets/tasteera_drinks_menu_page_13.asset.json";
+import drinksMenuPage14 from "@/assets/tasteera_drinks_menu_page_14.asset.json";
+import drinksMenuPage15 from "@/assets/tasteera_drinks_menu_page_15.asset.json";
+import drinksMenuPage16 from "@/assets/tasteera_drinks_menu_page_16.asset.json";
+import drinksMenuPage17 from "@/assets/tasteera_drinks_menu_page_17.asset.json";
+import drinksMenuPage18 from "@/assets/tasteera_drinks_menu_page_18.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
