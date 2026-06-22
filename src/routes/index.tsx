@@ -261,9 +261,9 @@ function TasteeraHome() {
           {[
             { icon: Utensils, label: "Indian · Pan-Asian · Continental" },
             { icon: Leaf, label: "Veg & Non-Veg" },
-            { icon: Wine, label: "Full Bar Available" },
-            { icon: Car, label: "Parking Available" },
             { icon: Music2, label: "Live Music Nights" },
+            { icon: Car, label: "Parking Available" },
+            { icon: () => <span className="font-display text-xl text-gold">☕</span>, label: "Café & Mocktails" },
             { icon: () => <span className="font-display text-xl text-gold">₹</span>, label: "₹800–1600 for two" },
           ].map((it) => {
             const Icon = it.icon as React.ElementType;
