@@ -406,7 +406,7 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
         </a>
         <nav className="hidden items-center gap-9 md:flex">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className={`text-sm uppercase tracking-[0.18em] transition-colors ${scrolled ? "text-foreground/80 hover:text-forest" : "text-cream/85 hover:text-cream"}`}>
+            <a key={l.label} href={l.href} {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className={`text-sm uppercase tracking-[0.18em] transition-colors ${scrolled ? "text-foreground/80 hover:text-forest" : "text-cream/85 hover:text-cream"}`}>
               {l.label}
             </a>
           ))}
