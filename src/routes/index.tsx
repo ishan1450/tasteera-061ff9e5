@@ -52,8 +52,8 @@ const menuGroups = [
     items: ["Wood-Fired Pizza", "Creamy Pasta", "Grilled Fish", "Burgers", "Artisanal Salads"],
   },
   {
-    title: "Bar & café",
-    items: ["Signature Cocktails", "Mocktails", "Single Malts", "Fresh Brews", "Dessert Drinks"],
+    title: "Café & desserts",
+    items: ["Mocktails", "Fresh Brews", "Cold Coffee", "Smoothies", "Dessert Jars"],
   },
 ];
 
