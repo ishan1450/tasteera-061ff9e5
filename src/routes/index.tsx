@@ -353,7 +353,11 @@ function TasteeraHome() {
                   Fri – Sun &nbsp;·&nbsp; 11:30 AM – 1:00 AM
                 </InfoRow>
                 <InfoRow icon={Phone} title="Call">
-                  <a href="tel:+917303336776" className="hover:text-gold">073033 36776</a>
+                  <a href="tel:+917303336776" className="hover:text-gold">+91 73033 36776</a><br/>
+                  <a href="tel:+919217534918" className="hover:text-gold">+91 92175 34918</a>
+                </InfoRow>
+                <InfoRow icon={Utensils} title="Email">
+                  <a href="mailto:tasteera24@gmail.com" className="hover:text-gold">tasteera24@gmail.com</a>
                 </InfoRow>
               </div>
 
