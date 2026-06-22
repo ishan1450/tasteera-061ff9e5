@@ -12,6 +12,9 @@ import brunchAsset from "@/assets/tasteera_brunch.asset.json";
 import ambLamps from "@/assets/ambiance_lamps.jpg";
 import ambTable from "@/assets/ambiance_table.jpg";
 import ambMusic from "@/assets/ambiance_music.jpg";
+import logoAsset from "@/assets/tasteera_logo.asset.json";
+import foodMenuAsset from "@/assets/tasteera_food_menu.asset.json";
+import drinksMenuAsset from "@/assets/tasteera_drinks_menu.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
