@@ -387,11 +387,11 @@ function InfoRow({ icon: Icon, title, children }: { icon: React.ElementType; tit
 
 function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean) => void; scrolled: boolean }) {
   const links = [
-    { href: "#about", label: "Story" },
-    { href: "#menu", label: "Menu" },
-    { href: "#ambiance", label: "Ambiance" },
-    { href: "#reservations", label: "Reserve" },
-    { href: "#visit", label: "Visit" },
+    { href: "#about", label: "Story", external: false },
+    { href: foodMenu.url, label: "Menu", external: true },
+    { href: "#ambiance", label: "Ambiance", external: false },
+    { href: "#reservations", label: "Reserve", external: false },
+    { href: "#visit", label: "Visit", external: false },
   ];
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-soft" : "bg-transparent"}`}>
