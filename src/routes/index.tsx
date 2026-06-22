@@ -125,6 +125,7 @@ function TasteeraHome() {
   useReveal();
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState<MenuDocument | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -297,26 +298,19 @@ function TasteeraHome() {
           </p>
 
           <div className="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
-            <MenuCard
-              icon={BookOpen}
-              label="Food Menu"
-              caption="Indian · Pan-Asian · Continental"
-              cover={drinksMenuCover.url}
-              pdfUrl={foodMenuAsset.url}
-            />
-            <MenuCard
-              icon={GlassWater}
-              label="Drinks Menu"
-              caption="Coffee · Mocktails · Juices"
-              cover={foodMenuCover.url}
-              pdfUrl={drinksMenuAsset.url}
-            />
+            {menuDocuments.map((menu) => (
+              <MenuCard key={menu.label} menu={menu} onOpen={() => setSelectedMenu(menu)} />
+            ))}
           </div>
           <p className="mt-6 text-xs text-muted-foreground">
-            Opens the PDF in a new tab. Tap a card to download if your browser doesn&apos;t preview it.
+            Opens here as clear images, so it works even if your browser blocks PDF previews.
           </p>
         </div>
       </section>
+
+      {selectedMenu && (
+        <MenuPreview menu={selectedMenu} onClose={() => setSelectedMenu(null)} />
+      )}
 
       {/* RESERVATIONS */}
       <section id="reservations" className="relative isolate overflow-hidden bg-forest py-28 md:py-36">
