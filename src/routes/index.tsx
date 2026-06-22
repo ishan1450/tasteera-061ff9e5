@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Tasteera Cafe & Restaurant — Gurugram" },
       { property: "og:description", content: "Where every plate tells a story. Upscale-casual dining, café brews & live music in Sector 31, Gurugram." },
       { property: "og:image", content: interiorAsset.url },
-      { property: "twitter:image", content: barAsset.url },
+      { property: "twitter:image", content: interiorAsset.url },
     ],
   }),
   component: TasteeraHome,
