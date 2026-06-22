@@ -9,9 +9,6 @@ import logoAsset from "@/assets/tasteera_logo.asset.json";
 import barAsset from "@/assets/tasteera_bar.asset.json";
 import pastaPlateAsset from "@/assets/tasteera_pasta_plate.asset.json";
 import breakfastAsset from "@/assets/tasteera_breakfast.asset.json";
-import interiorAsset from "@/assets/tasteera_interior.asset.json";
-import pastaAsset from "@/assets/tasteera_pasta.asset.json";
-import brunchAsset from "@/assets/tasteera_brunch.asset.json";
 import ambLamps from "@/assets/ambiance_lamps.jpg";
 import ambTable from "@/assets/ambiance_table.jpg";
 import ambMusic from "@/assets/ambiance_music.jpg";
@@ -148,7 +145,7 @@ function TasteeraHome() {
       <section id="about" className="relative py-28 md:py-36">
         <div className="mx-auto max-w-4xl px-6 text-center reveal">
           <span className="gold-divider">Our Story</span>
-          <h2 className="mt-6 font-display text-4xl text-forest md:text-6xl text-balance">
+          <h2 className="mt-6 font-display text-4xl text-[var(--forest)] md:text-6xl text-balance">
             More than a meal.<br/>An <em className="text-terracotta not-italic font-display">experience</em>.
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -167,7 +164,7 @@ function TasteeraHome() {
             { k: "Nightly", v: "Live Music Sets" },
           ].map((s) => (
             <div key={s.v} className="rounded-2xl border border-border/70 bg-card/50 p-6 text-center backdrop-blur">
-              <div className="font-display text-3xl text-forest md:text-4xl">{s.k}</div>
+              <div className="font-display text-3xl text-[var(--forest)] md:text-4xl">{s.k}</div>
               <div className="mt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.v}</div>
             </div>
           ))}
@@ -299,9 +296,9 @@ function TasteeraHome() {
 
       {/* RESERVATIONS — light, classy, complements landing */}
       <section id="reservations" className="relative overflow-hidden bg-[var(--forest)] py-28 text-[var(--cream)] md:py-36">
-        <div className="absolute inset-0 opacity-18" style={{ backgroundImage: `url(${barAsset.url})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+          <div className="absolute inset-0 opacity-[0.18]" style={{ backgroundImage: `url(${barAsset.url})`, backgroundSize: "cover", backgroundPosition: "center" }} />
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(25,41,31,.95),rgba(25,41,31,.84)_48%,rgba(108,73,43,.78))]" />
-        <div className="mx-auto max-w-3xl px-6 text-center reveal">
+        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center reveal">
           <span className="gold-divider">Bookings</span>
           <h2 className="mt-6 font-display text-5xl text-[var(--cream)] md:text-7xl text-balance">
             Reserve Your Table
