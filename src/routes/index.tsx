@@ -17,6 +17,26 @@ import foodMenuAsset from "@/assets/tasteera_food_menu.asset.json";
 import drinksMenuAsset from "@/assets/tasteera_drinks_menu.asset.json";
 import foodMenuCover from "@/assets/tasteera_food_menu_cover.asset.json";
 import drinksMenuCover from "@/assets/tasteera_drinks_menu_cover.asset.json";
+import foodMenuPage1 from "@/assets/tasteera_food_menu_page_1.asset.json";
+import foodMenuPage2 from "@/assets/tasteera_food_menu_page_2.asset.json";
+import drinksMenuPage1 from "@/assets/tasteera_drinks_menu_page_1.asset.json";
+import drinksMenuPage2 from "@/assets/tasteera_drinks_menu_page_2.asset.json";
+import drinksMenuPage3 from "@/assets/tasteera_drinks_menu_page_3.asset.json";
+import drinksMenuPage4 from "@/assets/tasteera_drinks_menu_page_4.asset.json";
+import drinksMenuPage5 from "@/assets/tasteera_drinks_menu_page_5.asset.json";
+import drinksMenuPage6 from "@/assets/tasteera_drinks_menu_page_6.asset.json";
+import drinksMenuPage7 from "@/assets/tasteera_drinks_menu_page_7.asset.json";
+import drinksMenuPage8 from "@/assets/tasteera_drinks_menu_page_8.asset.json";
+import drinksMenuPage9 from "@/assets/tasteera_drinks_menu_page_9.asset.json";
+import drinksMenuPage10 from "@/assets/tasteera_drinks_menu_page_10.asset.json";
+import drinksMenuPage11 from "@/assets/tasteera_drinks_menu_page_11.asset.json";
+import drinksMenuPage12 from "@/assets/tasteera_drinks_menu_page_12.asset.json";
+import drinksMenuPage13 from "@/assets/tasteera_drinks_menu_page_13.asset.json";
+import drinksMenuPage14 from "@/assets/tasteera_drinks_menu_page_14.asset.json";
+import drinksMenuPage15 from "@/assets/tasteera_drinks_menu_page_15.asset.json";
+import drinksMenuPage16 from "@/assets/tasteera_drinks_menu_page_16.asset.json";
+import drinksMenuPage17 from "@/assets/tasteera_drinks_menu_page_17.asset.json";
+import drinksMenuPage18 from "@/assets/tasteera_drinks_menu_page_18.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -40,6 +60,43 @@ const galleryItems = [
   { img: ambTable, label: "Set for the Evening" },
   { img: brunchAsset.url, label: "Brunch Mornings" },
   { img: ambMusic, label: "Live Music Nights", span: "md:col-span-2" },
+];
+
+const foodMenuPages = [foodMenuPage1.url, foodMenuPage2.url];
+const drinksMenuPages = [
+  drinksMenuPage1.url, drinksMenuPage2.url, drinksMenuPage3.url, drinksMenuPage4.url,
+  drinksMenuPage5.url, drinksMenuPage6.url, drinksMenuPage7.url, drinksMenuPage8.url,
+  drinksMenuPage9.url, drinksMenuPage10.url, drinksMenuPage11.url, drinksMenuPage12.url,
+  drinksMenuPage13.url, drinksMenuPage14.url, drinksMenuPage15.url, drinksMenuPage16.url,
+  drinksMenuPage17.url, drinksMenuPage18.url,
+];
+
+type MenuDocument = {
+  icon: React.ElementType;
+  label: string;
+  caption: string;
+  cover: string;
+  pdfUrl: string;
+  pages: string[];
+};
+
+const menuDocuments: MenuDocument[] = [
+  {
+    icon: BookOpen,
+    label: "Food Menu",
+    caption: "Indian · Pan-Asian · Continental",
+    cover: drinksMenuCover.url,
+    pdfUrl: foodMenuAsset.url,
+    pages: foodMenuPages,
+  },
+  {
+    icon: GlassWater,
+    label: "Drinks Menu",
+    caption: "Coffee · Mocktails · Juices",
+    cover: foodMenuCover.url,
+    pdfUrl: drinksMenuAsset.url,
+    pages: drinksMenuPages,
+  },
 ];
 
 function useReveal() {
@@ -68,6 +125,7 @@ function TasteeraHome() {
   useReveal();
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState<MenuDocument | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -240,26 +298,19 @@ function TasteeraHome() {
           </p>
 
           <div className="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
-            <MenuCard
-              icon={BookOpen}
-              label="Food Menu"
-              caption="Indian · Pan-Asian · Continental"
-              cover={foodMenuCover.url}
-              pdfUrl={foodMenuAsset.url}
-            />
-            <MenuCard
-              icon={GlassWater}
-              label="Drinks Menu"
-              caption="Coffee · Mocktails · Juices"
-              cover={drinksMenuCover.url}
-              pdfUrl={drinksMenuAsset.url}
-            />
+            {menuDocuments.map((menu) => (
+              <MenuCard key={menu.label} menu={menu} onOpen={() => setSelectedMenu(menu)} />
+            ))}
           </div>
           <p className="mt-6 text-xs text-muted-foreground">
-            Opens the PDF in a new tab. Tap a card to download if your browser doesn&apos;t preview it.
+            Opens here as clear images, so it works even if your browser blocks PDF previews.
           </p>
         </div>
       </section>
+
+      {selectedMenu && (
+        <MenuPreview menu={selectedMenu} onClose={() => setSelectedMenu(null)} />
+      )}
 
       {/* RESERVATIONS */}
       <section id="reservations" className="relative isolate overflow-hidden bg-forest py-28 md:py-36">
@@ -381,38 +432,20 @@ function InfoRow({ icon: Icon, title, children }: { icon: React.ElementType; tit
   );
 }
 
-function MenuCard({
-  icon: Icon, label, caption, cover, pdfUrl,
-}: {
-  icon: React.ElementType;
-  label: string;
-  caption: string;
-  cover: string;
-  pdfUrl: string;
-}) {
-  const handleOpen = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Resolve a fully-qualified URL so the new tab keeps the path even when
-    // the page is loaded inside an editor iframe (Safari sometimes drops
-    // the path on relative target=_blank navigations from an iframe).
-    if (typeof window === "undefined") return;
-    e.preventDefault();
-    const absolute = new URL(pdfUrl, window.location.origin).toString();
-    window.open(absolute, "_blank", "noopener,noreferrer");
-  };
+function MenuCard({ menu, onOpen }: { menu: MenuDocument; onOpen: () => void }) {
+  const Icon = menu.icon;
 
   return (
-    <a
-      href={pdfUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      onClick={handleOpen}
+    <button
+      type="button"
+      onClick={onOpen}
       className="group relative flex overflow-hidden rounded-2xl border border-border bg-card text-left shadow-soft transition hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-elegant"
-      aria-label={`Open ${label} PDF in a new tab`}
+      aria-label={`Open ${menu.label} preview`}
     >
       <div className="relative h-32 w-24 shrink-0 overflow-hidden bg-muted sm:h-36 sm:w-28">
         <img
-          src={cover}
-          alt={`${label} cover preview`}
+          src={menu.cover}
+          alt={`${menu.label} cover preview`}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -423,13 +456,47 @@ function MenuCard({
           <Icon className="h-3.5 w-3.5" />
           PDF Menu
         </span>
-        <span className="font-display text-2xl text-forest">{label}</span>
-        <span className="text-xs text-muted-foreground">{caption}</span>
+        <span className="font-display text-2xl text-forest">{menu.label}</span>
+        <span className="text-xs text-muted-foreground">{menu.caption}</span>
         <span className="mt-1 text-[0.7rem] uppercase tracking-[0.22em] text-terracotta transition group-hover:translate-x-1">
-          Open →
+          View →
         </span>
       </div>
-    </a>
+    </button>
+  );
+}
+
+function MenuPreview({ menu, onClose }: { menu: MenuDocument; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[70] overflow-y-auto bg-forest/85 px-4 py-6 backdrop-blur-sm md:py-10" role="dialog" aria-modal="true" aria-label={`${menu.label} preview`}>
+      <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl bg-background shadow-elegant">
+        <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-border bg-background/95 px-4 py-3 backdrop-blur md:px-6">
+          <div className="min-w-0">
+            <div className="font-display text-2xl text-forest">{menu.label}</div>
+            <div className="text-xs text-muted-foreground">{menu.caption}</div>
+          </div>
+          <div className="flex shrink-0 items-center gap-2">
+            <a href={menu.pdfUrl} download className="rounded-full bg-gold px-4 py-2 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-forest hover:opacity-90">
+              Download PDF
+            </a>
+            <button type="button" onClick={onClose} aria-label="Close menu preview" className="grid h-10 w-10 place-items-center rounded-full border border-border text-forest hover:border-gold hover:text-terracotta">
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+        <div className="space-y-4 bg-cream p-3 md:p-6">
+          {menu.pages.map((page, index) => (
+            <img
+              key={page}
+              src={page}
+              alt={`${menu.label} page ${index + 1}`}
+              className="mx-auto w-full rounded-xl border border-border bg-background shadow-soft"
+              loading={index === 0 ? "eager" : "lazy"}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
