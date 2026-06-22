@@ -325,10 +325,10 @@ function TasteeraHome() {
           </div>
 
           <p className="mt-10 text-sm text-[color-mix(in_oklch,var(--cream)_72%,transparent)]">
-            Walk-ins welcome. For large parties, call us at{" "}
-            <a href="tel:+917303336776" className="text-[var(--gold)] underline-offset-4 hover:underline">
-              +91 73033 36776
-            </a>.
+            Walk-ins welcome. For large parties, call{" "}
+            <a href="tel:+917303336776" className="text-[var(--gold)] underline-offset-4 hover:underline">+91 73033 36776</a>
+            {" "}or{" "}
+            <a href="tel:+919217534918" className="text-[var(--gold)] underline-offset-4 hover:underline">+91 92175 34918</a>.
           </p>
         </div>
       </section>
