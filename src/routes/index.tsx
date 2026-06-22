@@ -450,7 +450,7 @@ function Footer() {
           </div>
           <p className="mt-4 max-w-sm text-sm text-[#5a3b3f]/80">
             Where flavors meet timeless elegance. A warm, plant-filled corner of Sector 31
-            serving Indian, Pan-Asian and Continental dishes alongside cocktails and live music.
+            serving Indian, Pan-Asian and Continental dishes alongside café brews, mocktails and live music.
           </p>
           <div className="mt-6 flex gap-3">
             {[Instagram, Facebook, Twitter].map((Icon, i) => (
