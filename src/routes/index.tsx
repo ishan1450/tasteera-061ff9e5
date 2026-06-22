@@ -239,29 +239,25 @@ function TasteeraHome() {
             barista coffee, mocktails and fresh-pressed juices.
           </p>
 
-          <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
-            <a
-              href={foodMenuAsset.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border-b border-gold/40 pb-1 text-sm uppercase tracking-[0.22em] text-forest transition hover:border-gold hover:text-terracotta"
-            >
-              <BookOpen className="h-4 w-4 text-gold" />
-              <span>Food Menu</span>
-              <span className="text-gold transition group-hover:translate-x-1">→</span>
-            </a>
-            <span aria-hidden className="hidden h-px w-10 bg-border sm:block" />
-            <a
-              href={drinksMenuAsset.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 border-b border-gold/40 pb-1 text-sm uppercase tracking-[0.22em] text-forest transition hover:border-gold hover:text-terracotta"
-            >
-              <GlassWater className="h-4 w-4 text-gold" />
-              <span>Drinks Menu</span>
-              <span className="text-gold transition group-hover:translate-x-1">→</span>
-            </a>
+          <div className="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
+            <MenuCard
+              icon={BookOpen}
+              label="Food Menu"
+              caption="Indian · Pan-Asian · Continental"
+              cover={foodMenuCover.url}
+              pdfUrl={foodMenuAsset.url}
+            />
+            <MenuCard
+              icon={GlassWater}
+              label="Drinks Menu"
+              caption="Coffee · Mocktails · Juices"
+              cover={drinksMenuCover.url}
+              pdfUrl={drinksMenuAsset.url}
+            />
           </div>
+          <p className="mt-6 text-xs text-muted-foreground">
+            Opens the PDF in a new tab. Tap a card to download if your browser doesn&apos;t preview it.
+          </p>
         </div>
       </section>
 
