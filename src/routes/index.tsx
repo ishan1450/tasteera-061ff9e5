@@ -82,8 +82,8 @@ function TasteeraHome() {
       <Nav open={navOpen} setOpen={setNavOpen} scrolled={scrolled} />
 
       {/* HERO */}
-      <section id="top" className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
-        <div ref={heroRef} className="absolute inset-0 -z-10 will-change-transform">
+      <section id="top" className="relative isolate h-[100svh] min-h-[640px] w-full overflow-hidden bg-forest">
+        <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img
             src={heroImg}
             alt="Warm interior of Tasteera restaurant with rattan lamps and teal chairs"
@@ -91,8 +91,9 @@ function TasteeraHome() {
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-black/80" />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/85" />
+
 
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center">
           <span className="gold-divider animate-float-up" style={{ animationDelay: "0.1s" }}>
