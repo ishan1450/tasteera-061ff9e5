@@ -375,18 +375,9 @@ function TasteeraHome() {
             Choose your preferred partner — your seat at Tasteera is one click away.
           </p>
 
-          <div className="mt-12 grid gap-3 sm:grid-cols-2">
+          <div className="mt-12 grid gap-3 sm:grid-cols-1">
             {[
-              { name: "Zomato", url: "https://www.zomato.com/ncr/tasteera-cafe-1-sector-31-gurgaon/book" },
-              {
-                name: "EazyDiner",
-                url: "https://www.eazydiner.com/delhi-ncr/tasteera-cafe-restaurant-sector-31-gurgaon-712420",
-              },
               { name: "District", url: "https://www.district.in/dining/ncr/tasteera-cafe-1-sector-31-gurgaon/book" },
-              {
-                name: "Swiggy Dineout",
-                url: "https://www.swiggy.com/restaurants/tasteera-cafe-huda-city-gurgaon-1344498/dineout",
-              },
             ].map((p) => (
               <a
                 key={p.name}
@@ -410,6 +401,19 @@ function TasteeraHome() {
             </a>
             .
           </p>
+          <p className="mt-3 text-sm text-cream/60">
+            For WhatsApp enquiries, message us on{" "}
+            <a
+              href="https://wa.me/919217534918"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold underline-offset-4 hover:underline"
+            >
+              +91 92175 34918
+            </a>
+            .
+          </p>
+
         </div>
       </section>
 
