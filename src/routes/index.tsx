@@ -281,7 +281,7 @@ function TasteeraHome() {
 
       {/* RESERVATIONS — light, classy, complements landing */}
       <section id="reservations" className="relative overflow-hidden bg-[var(--forest)] py-28 text-[var(--cream)] md:py-36">
-          <div className="absolute inset-0 opacity-[0.18]" style={{ backgroundImage: `url(${barAsset.url})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+          <div className="absolute inset-0 opacity-[0.18]" style={{ backgroundImage: `url(${interiorAsset.url})`, backgroundSize: "cover", backgroundPosition: "center" }} />
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(25,41,31,.95),rgba(25,41,31,.84)_48%,rgba(108,73,43,.78))]" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center reveal">
           <span className="gold-divider">Bookings</span>
