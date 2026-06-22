@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 import logoAsset from "@/assets/tasteera_logo.asset.json";
-import barAsset from "@/assets/tasteera_bar.asset.json";
+
 import interiorAsset from "@/assets/tasteera_interior.asset.json";
 import pastaPlateAsset from "@/assets/tasteera_pasta_plate.asset.json";
 import breakfastAsset from "@/assets/tasteera_breakfast.asset.json";
