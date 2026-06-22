@@ -103,8 +103,8 @@ function TasteeraHome() {
       <section id="top" className="relative isolate h-[100svh] min-h-[640px] w-full overflow-hidden bg-[var(--forest)]">
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img
-            src={barAsset.url}
-            alt="Warm interior of Tasteera with teal chairs, wood bar and rattan lamps"
+            src={interiorAsset.url}
+            alt="Warm interior of Tasteera with rattan pendant lamps, teal chairs and lush greenery"
             className="h-full w-full object-cover animate-ken-burns"
             width={1920}
             height={1080}
@@ -120,18 +120,18 @@ function TasteeraHome() {
             Tasteéra
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-[color-mix(in_oklch,var(--cream)_92%,transparent)] md:text-2xl font-display italic animate-float-up text-balance" style={{ animationDelay: "0.45s" }}>
-            Where flavors meet timeless elegance.
+            Where every plate tells a story.
           </p>
           <p className="mt-3 max-w-xl text-sm text-[color-mix(in_oklch,var(--cream)_80%,transparent)] md:text-base animate-float-up" style={{ animationDelay: "0.55s" }}>
-            Indian · Pan-Asian · Continental · Full Bar · Live Music
+            Indian · Pan-Asian · Continental · Live Music
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row animate-float-up" style={{ animationDelay: "0.7s" }}>
             <a href="#reservations" className="group inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--forest)] transition hover:scale-[1.03] shadow-elegant">
               Reserve a Table
             </a>
-            <a href="#menu" className="inline-flex items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--cream)_42%,transparent)] bg-[color-mix(in_oklch,var(--cream)_10%,transparent)] px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--cream)] backdrop-blur transition hover:bg-[color-mix(in_oklch,var(--cream)_18%,transparent)]">
-              View Menu
+            <a href="#visit" className="inline-flex items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--cream)_42%,transparent)] bg-[color-mix(in_oklch,var(--cream)_10%,transparent)] px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--cream)] backdrop-blur transition hover:bg-[color-mix(in_oklch,var(--cream)_18%,transparent)]">
+              Visit Us
             </a>
           </div>
         </div>
@@ -140,6 +140,7 @@ function TasteeraHome() {
           <ChevronDown className="h-7 w-7 animate-bounce" />
         </a>
       </section>
+
 
       {/* ABOUT */}
       <section id="about" className="relative py-28 md:py-36">
