@@ -320,7 +320,7 @@ function TasteeraHome() {
             { icon: Leaf, label: "Veg & Non-Veg" },
             { icon: Coffee, label: "Coffee, Mocktails & Fresh Juices" },
             { icon: Car, label: "Parking Available" },
-            { icon: Music2, label: "Live Music Nights" },
+            { icon: Music2, label: "Live Coffee Rave Events" },
             { icon: () => <span className="font-display text-xl text-gold">₹</span>, label: "₹800–1600 for two" },
           ].map((it) => {
             const Icon = it.icon as React.ElementType;
