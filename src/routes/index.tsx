@@ -223,15 +223,15 @@ function TasteeraHome() {
       </section>
 
       {/* RESERVATIONS */}
-      <section id="reservations" className="relative overflow-hidden py-28 md:py-36">
+      <section id="reservations" className="relative isolate overflow-hidden bg-forest py-28 md:py-36">
         <div
-          className="absolute inset-0 -z-10 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{ backgroundImage: `url(${ambTable})` }}
           aria-hidden
         />
-        <div className="absolute inset-0 -z-10 bg-forest/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest via-forest/95 to-forest" />
 
-        <div className="mx-auto max-w-3xl px-6 text-center text-cream reveal">
+        <div className="relative mx-auto max-w-3xl px-6 text-center text-cream reveal">
           <span className="gold-divider">Bookings</span>
           <h2 className="mt-6 font-display text-5xl md:text-7xl text-balance">
             Reserve Your Table
