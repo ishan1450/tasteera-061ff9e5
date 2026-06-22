@@ -264,7 +264,7 @@ function TasteeraHome() {
           {[
             { k: "8+", v: "Years Plating Stories" },
             { k: "120+", v: "Dishes On the Menu" },
-            { k: "4.4★", v: "Loved on Zomato" },
+            { k: "4.8★", v: "Google Ratings" },
             { k: "Nightly", v: "Live Music Sets" },
           ].map((s) => (
             <div key={s.v} className="rounded-2xl border border-border/70 bg-card/50 p-6 text-center backdrop-blur">
