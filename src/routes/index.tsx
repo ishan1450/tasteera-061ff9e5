@@ -408,8 +408,8 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-soft" : "bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
         <a href="#top" className="flex items-center gap-3">
-          <span className={`grid h-11 w-11 place-items-center rounded-full transition-colors ${scrolled ? "bg-cream" : "bg-cream/95 shadow-soft"}`}>
-            <img src={logoAsset.url} alt="Tasteera logo" className="h-9 w-9 object-contain" />
+          <span className="block h-11 w-11 overflow-hidden rounded-full ring-1 ring-cream/40 shadow-soft">
+            <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover" />
           </span>
           <span className={`font-display text-2xl font-semibold tracking-wide transition-colors ${scrolled ? "text-forest" : "text-cream"}`}>
             Tasteéra
