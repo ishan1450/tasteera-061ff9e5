@@ -453,22 +453,23 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
 
 function Footer() {
   return (
-    <footer className="bg-forest text-cream/80">
+    <footer className="relative bg-[linear-gradient(135deg,#fbeee0_0%,#f7e0d4_45%,#f3cdd3_100%)] text-[#5a3b3f]">
+      <div className="absolute inset-x-0 top-0 h-px bg-[color-mix(in_oklch,var(--gold)_38%,transparent)]" />
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
-            <span className="grid h-12 w-12 place-items-center rounded-full bg-cream">
-              <img src={logoAsset.url} alt="Tasteera logo" className="h-10 w-10 object-contain" />
+            <span className="block h-12 w-12 overflow-hidden rounded-full ring-1 ring-[#c89aa1]/60 shadow-soft">
+              <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover" />
             </span>
-            <div className="font-display text-3xl text-cream">Tasteéra</div>
+            <div className="font-display text-3xl text-[#3d2a2e]">Tasteéra</div>
           </div>
-          <p className="mt-4 max-w-sm text-sm text-cream/65">
+          <p className="mt-4 max-w-sm text-sm text-[#5a3b3f]/80">
             Where flavors meet timeless elegance. A warm, plant-filled corner of Sector 31
             serving Indian, Pan-Asian and Continental dishes alongside cocktails and live music.
           </p>
           <div className="mt-6 flex gap-3">
             {[Instagram, Facebook, Twitter].map((Icon, i) => (
-              <a key={i} href="#" aria-label="social" className="grid h-10 w-10 place-items-center rounded-full border border-cream/20 text-cream/80 hover:border-gold hover:text-gold">
+              <a key={i} href="#" aria-label="social" className="grid h-10 w-10 place-items-center rounded-full border border-[#c89aa1]/60 text-[#5a3b3f] hover:border-[var(--gold)] hover:text-[var(--gold)]">
                 <Icon className="h-4 w-4" />
               </a>
             ))}
@@ -476,28 +477,32 @@ function Footer() {
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-[0.22em] text-gold">Explore</div>
+          <div className="text-xs uppercase tracking-[0.22em] text-[#b6735a]">Explore</div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="#about" className="hover:text-cream">Our Story</a></li>
-            <li><a href="#menu" className="hover:text-cream">Menu</a></li>
-            <li><a href="#ambiance" className="hover:text-cream">Ambiance</a></li>
-            <li><a href="#reservations" className="hover:text-cream">Reservations</a></li>
-            <li><a href="#visit" className="hover:text-cream">Visit Us</a></li>
+            <li><a href="#about" className="hover:text-[#3d2a2e]">Our Story</a></li>
+            <li><a href="#menu" className="hover:text-[#3d2a2e]">Menu</a></li>
+            <li><a href="#ambiance" className="hover:text-[#3d2a2e]">Ambiance</a></li>
+            <li><a href="#reservations" className="hover:text-[#3d2a2e]">Reservations</a></li>
+            <li><a href="#visit" className="hover:text-[#3d2a2e]">Visit Us</a></li>
           </ul>
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-[0.22em] text-gold">Find Us</div>
-          <address className="mt-4 not-italic text-sm leading-relaxed text-cream/75">
+          <div className="text-xs uppercase tracking-[0.22em] text-[#b6735a]">Get in Touch</div>
+          <address className="mt-4 not-italic text-sm leading-relaxed text-[#5a3b3f]/85">
             First Floor, Huda Market,<br/>
             SCO No. 40, Sector 31,<br/>
             Gurugram, Haryana 122001
           </address>
-          <a href="tel:+917303336776" className="mt-3 inline-block text-sm hover:text-gold">073033 36776</a>
+          <div className="mt-4 space-y-1 text-sm">
+            <a href="tel:+917303336776" className="block hover:text-[var(--gold)]">+91 73033 36776</a>
+            <a href="tel:+919217534918" className="block hover:text-[var(--gold)]">+91 92175 34918</a>
+            <a href="mailto:tasteera24@gmail.com" className="block hover:text-[var(--gold)]">tasteera24@gmail.com</a>
+          </div>
         </div>
       </div>
-      <div className="border-t border-cream/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-cream/50 sm:flex-row">
+      <div className="border-t border-[#c89aa1]/40">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-xs text-[#5a3b3f]/70 sm:flex-row">
           <p>© {new Date().getFullYear()} Tasteera Cafe & Restaurant. All rights reserved.</p>
           <p>Crafted with warmth in Gurugram.</p>
         </div>
@@ -505,3 +510,4 @@ function Footer() {
     </footer>
   );
 }
+
