@@ -207,7 +207,7 @@ function TasteeraHome() {
           {[
             { icon: Utensils, label: "Indian · Pan-Asian · Continental" },
             { icon: Leaf, label: "Veg & Non-Veg" },
-            { icon: Wine, label: "Full Bar Available" },
+            { icon: Coffee, label: "Coffee, Mocktails & Fresh Juices" },
             { icon: Car, label: "Parking Available" },
             { icon: Music2, label: "Live Music Nights" },
             { icon: () => <span className="font-display text-xl text-gold">₹</span>, label: "₹800–1600 for two" },
