@@ -422,7 +422,7 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
         <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
           <nav className="flex flex-col px-6 py-6">
             {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-3 text-sm uppercase tracking-[0.18em] text-forest">
+              <a key={l.label} href={l.href} {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} onClick={() => setOpen(false)} className="py-3 text-sm uppercase tracking-[0.18em] text-forest">
                 {l.label}
               </a>
             ))}
