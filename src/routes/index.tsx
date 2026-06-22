@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 });
 
 const galleryItems = [
-  { img: barAsset.url, label: "The Bar & Dining Room", span: "md:col-span-2 md:row-span-2" },
+  { img: interiorAsset.url, label: "The Dining Room", span: "md:col-span-2 md:row-span-2" },
   { img: ambLamps, label: "Light & Greenery" },
   { img: pastaPlateAsset.url, label: "Plated With Care" },
   { img: ambTable, label: "Set for the Evening" },
