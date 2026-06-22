@@ -7,13 +7,13 @@ import {
 
 import logoAsset from "@/assets/tasteera_logo.asset.json";
 import barAsset from "@/assets/tasteera_bar.asset.json";
+import interiorAsset from "@/assets/tasteera_interior.asset.json";
 import pastaPlateAsset from "@/assets/tasteera_pasta_plate.asset.json";
 import breakfastAsset from "@/assets/tasteera_breakfast.asset.json";
 import ambLamps from "@/assets/ambiance_lamps.jpg";
 import ambTable from "@/assets/ambiance_table.jpg";
 import ambMusic from "@/assets/ambiance_music.jpg";
 import foodMenu from "@/assets/tasteera_food_menu.asset.json";
-import drinksMenu from "@/assets/tasteera_drinks_menu.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
