@@ -432,27 +432,20 @@ function InfoRow({ icon: Icon, title, children }: { icon: React.ElementType; tit
   );
 }
 
-function MenuCard({
-  icon: Icon, label, caption, cover, pdfUrl,
-}: {
-  icon: React.ElementType;
-  label: string;
-  caption: string;
-  cover: string;
-  pdfUrl: string;
-}) {
+function MenuCard({ menu, onOpen }: { menu: MenuDocument; onOpen: () => void }) {
+  const Icon = menu.icon;
+
   return (
-    <a
-      href={pdfUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+    <button
+      type="button"
+      onClick={onOpen}
       className="group relative flex overflow-hidden rounded-2xl border border-border bg-card text-left shadow-soft transition hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-elegant"
-      aria-label={`Open ${label} PDF in a new tab`}
+      aria-label={`Open ${menu.label} preview`}
     >
       <div className="relative h-32 w-24 shrink-0 overflow-hidden bg-muted sm:h-36 sm:w-28">
         <img
-          src={cover}
-          alt={`${label} cover preview`}
+          src={menu.cover}
+          alt={`${menu.label} cover preview`}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
@@ -463,13 +456,47 @@ function MenuCard({
           <Icon className="h-3.5 w-3.5" />
           PDF Menu
         </span>
-        <span className="font-display text-2xl text-forest">{label}</span>
-        <span className="text-xs text-muted-foreground">{caption}</span>
+        <span className="font-display text-2xl text-forest">{menu.label}</span>
+        <span className="text-xs text-muted-foreground">{menu.caption}</span>
         <span className="mt-1 text-[0.7rem] uppercase tracking-[0.22em] text-terracotta transition group-hover:translate-x-1">
-          Open →
+          View →
         </span>
       </div>
-    </a>
+    </button>
+  );
+}
+
+function MenuPreview({ menu, onClose }: { menu: MenuDocument; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[70] overflow-y-auto bg-forest/85 px-4 py-6 backdrop-blur-sm md:py-10" role="dialog" aria-modal="true" aria-label={`${menu.label} preview`}>
+      <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl bg-background shadow-elegant">
+        <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-border bg-background/95 px-4 py-3 backdrop-blur md:px-6">
+          <div className="min-w-0">
+            <div className="font-display text-2xl text-forest">{menu.label}</div>
+            <div className="text-xs text-muted-foreground">{menu.caption}</div>
+          </div>
+          <div className="flex shrink-0 items-center gap-2">
+            <a href={menu.pdfUrl} download className="rounded-full bg-gold px-4 py-2 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-forest hover:opacity-90">
+              Download PDF
+            </a>
+            <button type="button" onClick={onClose} aria-label="Close menu preview" className="grid h-10 w-10 place-items-center rounded-full border border-border text-forest hover:border-gold hover:text-terracotta">
+              <X className="h-5 w-5" />
+            </button>
+          </div>
+        </div>
+        <div className="space-y-4 bg-cream p-3 md:p-6">
+          {menu.pages.map((page, index) => (
+            <img
+              key={page}
+              src={page}
+              alt={`${menu.label} page ${index + 1}`}
+              className="mx-auto w-full rounded-xl border border-border bg-background shadow-soft"
+              loading={index === 0 ? "eager" : "lazy"}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
