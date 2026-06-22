@@ -371,9 +371,7 @@ function TasteeraHome() {
         <div className="relative mx-auto max-w-3xl px-6 text-center text-cream reveal">
           <span className="gold-divider">Bookings</span>
           <h2 className="mt-6 font-display text-5xl md:text-7xl text-balance">Reserve Your Table</h2>
-          <p className="mx-auto mt-6 max-w-xl text-cream/80">
-            Choose your preferred partner — your seat at Tasteera is one click away.
-          </p>
+          <p className="mx-auto mt-6 max-w-xl text-cream/80">Your seat at Tasteera is one click away.</p>
 
           <div className="mt-12 grid gap-3 sm:grid-cols-1">
             {[
@@ -413,7 +411,6 @@ function TasteeraHome() {
             </a>
             .
           </p>
-
         </div>
       </section>
 
