@@ -244,14 +244,14 @@ function TasteeraHome() {
               icon={BookOpen}
               label="Food Menu"
               caption="Indian · Pan-Asian · Continental"
-              cover={foodMenuCover.url}
+              cover={drinksMenuCover.url}
               pdfUrl={foodMenuAsset.url}
             />
             <MenuCard
               icon={GlassWater}
               label="Drinks Menu"
               caption="Coffee · Mocktails · Juices"
-              cover={drinksMenuCover.url}
+              cover={foodMenuCover.url}
               pdfUrl={drinksMenuAsset.url}
             />
           </div>
@@ -390,22 +390,11 @@ function MenuCard({
   cover: string;
   pdfUrl: string;
 }) {
-  const handleOpen = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Resolve a fully-qualified URL so the new tab keeps the path even when
-    // the page is loaded inside an editor iframe (Safari sometimes drops
-    // the path on relative target=_blank navigations from an iframe).
-    if (typeof window === "undefined") return;
-    e.preventDefault();
-    const absolute = new URL(pdfUrl, window.location.origin).toString();
-    window.open(absolute, "_blank", "noopener,noreferrer");
-  };
-
   return (
     <a
       href={pdfUrl}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={handleOpen}
       className="group relative flex overflow-hidden rounded-2xl border border-border bg-card text-left shadow-soft transition hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-elegant"
       aria-label={`Open ${label} PDF in a new tab`}
     >
