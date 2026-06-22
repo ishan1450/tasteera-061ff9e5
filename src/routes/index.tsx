@@ -225,6 +225,44 @@ function TasteeraHome() {
         </div>
       </section>
 
+      {/* MENU */}
+      <section id="menu" className="relative py-24 md:py-32">
+        <div className="mx-auto max-w-3xl px-6 text-center reveal">
+          <span className="gold-divider">The Menu</span>
+          <h2 className="mt-6 font-display text-4xl text-forest md:text-5xl text-balance">
+            Browse at your leisure.
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
+            A seasonal blend of Indian, Pan-Asian and Continental plates, paired with
+            barista coffee, mocktails and fresh-pressed juices.
+          </p>
+
+          <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
+            <a
+              href={foodMenuAsset.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 border-b border-gold/40 pb-1 text-sm uppercase tracking-[0.22em] text-forest transition hover:border-gold hover:text-terracotta"
+            >
+              <BookOpen className="h-4 w-4 text-gold" />
+              <span>Food Menu</span>
+              <span className="text-gold transition group-hover:translate-x-1">→</span>
+            </a>
+            <span aria-hidden className="hidden h-px w-10 bg-border sm:block" />
+            <a
+              href={drinksMenuAsset.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 border-b border-gold/40 pb-1 text-sm uppercase tracking-[0.22em] text-forest transition hover:border-gold hover:text-terracotta"
+            >
+              <GlassWater className="h-4 w-4 text-gold" />
+              <span>Drinks Menu</span>
+              <span className="text-gold transition group-hover:translate-x-1">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* RESERVATIONS */}
       <section id="reservations" className="relative isolate overflow-hidden bg-forest py-28 md:py-36">
         <div
