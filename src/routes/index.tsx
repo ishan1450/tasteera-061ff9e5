@@ -339,6 +339,8 @@ function TasteeraHome() {
                 <InfoRow icon={Mail} title="Email">
                   <a href="mailto:tasteera24@gmail.com" className="hover:text-gold">tasteera24@gmail.com</a>
                 </InfoRow>
+              </div>
+
 
               <a
                 href="https://maps.google.com/?q=Tasteera+Cafe+Sector+31+Gurugram"
