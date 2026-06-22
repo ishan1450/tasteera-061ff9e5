@@ -1,8 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
-  Phone, MapPin, Clock, Utensils, Coffee, Car, Leaf, Music2, Menu, X,
-  ChevronDown, Instagram, Facebook, Twitter, Mail, BookOpen, GlassWater,
+  Phone,
+  MapPin,
+  Clock,
+  Utensils,
+  Coffee,
+  Car,
+  Leaf,
+  Music2,
+  Menu,
+  X,
+  ChevronDown,
+  Instagram,
+  Facebook,
+  Twitter,
+  Mail,
+  BookOpen,
+  GlassWater,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero_restaurant.jpg";
@@ -42,16 +57,23 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Tasteera Cafe & Restaurant — Gurugram | Where Every Plate Tells a Story" },
-      { name: "description", content: "Tasteera in Sector 31, Gurugram serves Indian, Pan-Asian & Continental cuisine in a warm, plant-filled space with live music and a full bar. Reserve your table today." },
+      {
+        name: "description",
+        content:
+          "Tasteera in Sector 31, Gurugram serves Indian, Pan-Asian & Continental cuisine in a warm, plant-filled space with live music and a full bar. Reserve your table today.",
+      },
       { property: "og:title", content: "Tasteera Cafe & Restaurant — Gurugram" },
-      { property: "og:description", content: "Where every plate tells a story. Upscale-casual dining, live music & full bar in Sector 31, Gurugram." },
+      {
+        property: "og:description",
+        content:
+          "Where every plate tells a story. Upscale-casual dining, live music & full bar in Sector 31, Gurugram.",
+      },
       { property: "og:image", content: heroImg },
       { property: "twitter:image", content: heroImg },
     ],
   }),
   component: TasteeraHome,
 });
-
 
 const galleryItems = [
   { img: interiorAsset.url, label: "The Dining Room", span: "md:col-span-2 md:row-span-2" },
@@ -64,11 +86,24 @@ const galleryItems = [
 
 const foodMenuPages = [foodMenuPage1.url, foodMenuPage2.url];
 const drinksMenuPages = [
-  drinksMenuPage1.url, drinksMenuPage2.url, drinksMenuPage3.url, drinksMenuPage4.url,
-  drinksMenuPage5.url, drinksMenuPage6.url, drinksMenuPage7.url, drinksMenuPage8.url,
-  drinksMenuPage9.url, drinksMenuPage10.url, drinksMenuPage11.url, drinksMenuPage12.url,
-  drinksMenuPage13.url, drinksMenuPage14.url, drinksMenuPage15.url, drinksMenuPage16.url,
-  drinksMenuPage17.url, drinksMenuPage18.url,
+  drinksMenuPage1.url,
+  drinksMenuPage2.url,
+  drinksMenuPage3.url,
+  drinksMenuPage4.url,
+  drinksMenuPage5.url,
+  drinksMenuPage6.url,
+  drinksMenuPage7.url,
+  drinksMenuPage8.url,
+  drinksMenuPage9.url,
+  drinksMenuPage10.url,
+  drinksMenuPage11.url,
+  drinksMenuPage12.url,
+  drinksMenuPage13.url,
+  drinksMenuPage14.url,
+  drinksMenuPage15.url,
+  drinksMenuPage16.url,
+  drinksMenuPage17.url,
+  drinksMenuPage18.url,
 ];
 
 type MenuDocument = {
@@ -83,7 +118,7 @@ type MenuDocument = {
 const menuDocuments: MenuDocument[] = [
   {
     icon: BookOpen,
-    label: "Food Menu",
+    label: "Drinks Menu",
     caption: "Indian · Pan-Asian · Continental",
     cover: drinksMenuCover.url,
     pdfUrl: foodMenuAsset.url,
@@ -104,13 +139,14 @@ function useReveal() {
     document.documentElement.classList.add("js-reveal-ready");
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("in");
-          io.unobserve(e.target);
-        }
-      }),
-      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" }
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("in");
+            io.unobserve(e.target);
+          }
+        }),
+      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" },
     );
     els.forEach((el) => {
       const rect = el.getBoundingClientRect();
@@ -158,32 +194,50 @@ function TasteeraHome() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/85" />
 
-
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center">
           <span className="gold-divider animate-float-up" style={{ animationDelay: "0.1s" }}>
             Gurugram · Est. Sector 31
           </span>
-          <h1 className="mt-6 font-display text-[15vw] leading-[0.95] text-cream sm:text-7xl md:text-8xl lg:text-[8.5rem] animate-float-up text-balance" style={{ animationDelay: "0.25s" }}>
+          <h1
+            className="mt-6 font-display text-[15vw] leading-[0.95] text-cream sm:text-7xl md:text-8xl lg:text-[8.5rem] animate-float-up text-balance"
+            style={{ animationDelay: "0.25s" }}
+          >
             Tasteéra
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-cream/85 md:text-2xl font-display italic animate-float-up text-balance" style={{ animationDelay: "0.45s" }}>
+          <p
+            className="mt-6 max-w-2xl text-lg text-cream/85 md:text-2xl font-display italic animate-float-up text-balance"
+            style={{ animationDelay: "0.45s" }}
+          >
             Where every plate tells a story.
           </p>
-          <p className="mt-3 max-w-xl text-sm text-cream/65 md:text-base animate-float-up" style={{ animationDelay: "0.55s" }}>
+          <p
+            className="mt-3 max-w-xl text-sm text-cream/65 md:text-base animate-float-up"
+            style={{ animationDelay: "0.55s" }}
+          >
             Indian · Pan-Asian · Continental · Coffee & Mocktails · Live Music
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row animate-float-up" style={{ animationDelay: "0.7s" }}>
-            <a href="#reservations" className="group inline-flex items-center justify-center rounded-full bg-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-forest transition hover:scale-[1.03] shadow-elegant">
+            <a
+              href="#reservations"
+              className="group inline-flex items-center justify-center rounded-full bg-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-forest transition hover:scale-[1.03] shadow-elegant"
+            >
               Reserve a Table
             </a>
-            <a href="#visit" className="inline-flex items-center justify-center rounded-full border border-cream/40 bg-cream/5 px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-cream backdrop-blur transition hover:bg-cream/15">
+            <a
+              href="#visit"
+              className="inline-flex items-center justify-center rounded-full border border-cream/40 bg-cream/5 px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-cream backdrop-blur transition hover:bg-cream/15"
+            >
               Visit Us
             </a>
           </div>
         </div>
 
-        <a href="#about" aria-label="Scroll down" className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-cream/70 hover:text-cream">
+        <a
+          href="#about"
+          aria-label="Scroll down"
+          className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-cream/70 hover:text-cream"
+        >
           <ChevronDown className="h-7 w-7 animate-bounce" />
         </a>
       </section>
@@ -193,15 +247,16 @@ function TasteeraHome() {
         <div className="mx-auto max-w-4xl px-6 text-center reveal">
           <span className="gold-divider">Our Story</span>
           <h2 className="mt-6 font-display text-4xl text-forest md:text-6xl text-balance">
-            More than a meal.<br/>An <em className="text-terracotta not-italic font-display">experience</em>.
+            More than a meal.
+            <br />
+            An <em className="text-terracotta not-italic font-display">experience</em>.
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Tasteera was born from a simple idea — that food should be plated like art, served
-            with genuine warmth, and remembered long after the table is cleared. Tucked into
-            Huda Market in Sector 31, our space pairs warm wood and deep greens with the soft
-            glow of rattan lamps and quiet hum of live music. Every dish, from our slow-cooked
-            Dal-E-Tasteera to our hand-folded dim sum, is built around the consistency our
-            regulars trust and the presentation new guests can't stop photographing.
+            Tasteera was born from a simple idea — that food should be plated like art, served with genuine warmth, and
+            remembered long after the table is cleared. Tucked into Huda Market in Sector 31, our space pairs warm wood
+            and deep greens with the soft glow of rattan lamps and quiet hum of live music. Every dish, from our
+            slow-cooked Dal-E-Tasteera to our hand-folded dim sum, is built around the consistency our regulars trust
+            and the presentation new guests can't stop photographing.
           </p>
         </div>
 
@@ -220,9 +275,6 @@ function TasteeraHome() {
         </div>
       </section>
 
-
-
-
       {/* AMBIANCE / GALLERY */}
       <section id="ambiance" className="relative py-28 md:py-36">
         <div className="mx-auto max-w-6xl px-6">
@@ -230,21 +282,20 @@ function TasteeraHome() {
             <div>
               <span className="gold-divider">The Room</span>
               <h2 className="mt-6 font-display text-4xl text-forest md:text-6xl text-balance">
-                Lamplight, greenery,<br/>and a guitar in the corner.
+                Lamplight, greenery,
+                <br />
+                and a guitar in the corner.
               </h2>
             </div>
             <p className="max-w-sm text-muted-foreground">
-              Catch a candlelit dinner mid-week, or settle in for our live acoustic sets every
-              Friday and Saturday evening. Bookings recommended after 8 PM.
+              Catch a candlelit dinner mid-week, or settle in for our live acoustic sets every Friday and Saturday
+              evening. Bookings recommended after 8 PM.
             </p>
           </div>
 
           <div className="mt-12 grid auto-rows-[180px] grid-cols-2 gap-3 md:auto-rows-[220px] md:grid-cols-4">
             {galleryItems.map((g) => (
-              <figure
-                key={g.label}
-                className={`reveal group relative overflow-hidden rounded-2xl ${g.span ?? ""}`}
-              >
+              <figure key={g.label} className={`reveal group relative overflow-hidden rounded-2xl ${g.span ?? ""}`}>
                 <img
                   src={g.img}
                   alt={g.label}
@@ -289,12 +340,10 @@ function TasteeraHome() {
       <section id="menu" className="relative py-24 md:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center reveal">
           <span className="gold-divider">The Menu</span>
-          <h2 className="mt-6 font-display text-4xl text-forest md:text-5xl text-balance">
-            Browse at your leisure.
-          </h2>
+          <h2 className="mt-6 font-display text-4xl text-forest md:text-5xl text-balance">Browse at your leisure.</h2>
           <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-            A seasonal blend of Indian, Pan-Asian and Continental plates, paired with
-            barista coffee, mocktails and fresh-pressed juices.
+            A seasonal blend of Indian, Pan-Asian and Continental plates, paired with barista coffee, mocktails and
+            fresh-pressed juices.
           </p>
 
           <div className="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-2">
@@ -308,9 +357,7 @@ function TasteeraHome() {
         </div>
       </section>
 
-      {selectedMenu && (
-        <MenuPreview menu={selectedMenu} onClose={() => setSelectedMenu(null)} />
-      )}
+      {selectedMenu && <MenuPreview menu={selectedMenu} onClose={() => setSelectedMenu(null)} />}
 
       {/* RESERVATIONS */}
       <section id="reservations" className="relative isolate overflow-hidden bg-forest py-28 md:py-36">
@@ -323,9 +370,7 @@ function TasteeraHome() {
 
         <div className="relative mx-auto max-w-3xl px-6 text-center text-cream reveal">
           <span className="gold-divider">Bookings</span>
-          <h2 className="mt-6 font-display text-5xl md:text-7xl text-balance">
-            Reserve Your Table
-          </h2>
+          <h2 className="mt-6 font-display text-5xl md:text-7xl text-balance">Reserve Your Table</h2>
           <p className="mx-auto mt-6 max-w-xl text-cream/80">
             Choose your preferred partner — your seat at Tasteera is one click away.
           </p>
@@ -333,9 +378,15 @@ function TasteeraHome() {
           <div className="mt-12 grid gap-3 sm:grid-cols-2">
             {[
               { name: "Zomato", url: "https://www.zomato.com/ncr/tasteera-cafe-1-sector-31-gurgaon/book" },
-              { name: "EazyDiner", url: "https://www.eazydiner.com/delhi-ncr/tasteera-cafe-restaurant-sector-31-gurgaon-712420" },
+              {
+                name: "EazyDiner",
+                url: "https://www.eazydiner.com/delhi-ncr/tasteera-cafe-restaurant-sector-31-gurgaon-712420",
+              },
               { name: "District", url: "https://www.district.in/dining/ncr/tasteera-cafe-1-sector-31-gurgaon/book" },
-              { name: "Swiggy Dineout", url: "https://www.swiggy.com/restaurants/tasteera-cafe-huda-city-gurgaon-1344498/dineout" },
+              {
+                name: "Swiggy Dineout",
+                url: "https://www.swiggy.com/restaurants/tasteera-cafe-huda-city-gurgaon-1344498/dineout",
+              },
             ].map((p) => (
               <a
                 key={p.name}
@@ -356,7 +407,8 @@ function TasteeraHome() {
             Walk-ins welcome. For large parties, call us at{" "}
             <a href="tel:+917303336776" className="text-gold underline-offset-4 hover:underline">
               +91 73033 36776
-            </a>.
+            </a>
+            .
           </p>
         </div>
       </section>
@@ -368,32 +420,42 @@ function TasteeraHome() {
             <div className="reveal">
               <span className="gold-divider">Visit Us</span>
               <h2 className="mt-6 font-display text-4xl text-forest md:text-5xl text-balance">
-                Tucked into Huda Market,<br/>open late into the night.
+                Tucked into Huda Market,
+                <br />
+                open late into the night.
               </h2>
 
               <div className="mt-10 space-y-6 text-base">
                 <InfoRow icon={MapPin} title="Address">
-                  First Floor, Huda Market, SCO No. 40,<br/>
+                  First Floor, Huda Market, SCO No. 40,
+                  <br />
                   Sector 31, Gurugram, Haryana 122001
                 </InfoRow>
                 <InfoRow icon={Clock} title="Hours">
-                  Mon – Thu &nbsp;·&nbsp; 11:30 AM – 11:59 PM<br/>
+                  Mon – Thu &nbsp;·&nbsp; 11:30 AM – 11:59 PM
+                  <br />
                   Fri – Sun &nbsp;·&nbsp; 11:30 AM – 1:00 AM
                 </InfoRow>
                 <InfoRow icon={Phone} title="Call">
-                  <a href="tel:+917303336776" className="hover:text-gold">073033 36776</a>
+                  <a href="tel:+917303336776" className="hover:text-gold">
+                    073033 36776
+                  </a>
                   <span className="text-muted-foreground"> · </span>
-                  <a href="tel:+919217534918" className="hover:text-gold">092175 34918</a>
+                  <a href="tel:+919217534918" className="hover:text-gold">
+                    092175 34918
+                  </a>
                 </InfoRow>
                 <InfoRow icon={Mail} title="Email">
-                  <a href="mailto:tasteera24@gmail.com" className="hover:text-gold">tasteera24@gmail.com</a>
+                  <a href="mailto:tasteera24@gmail.com" className="hover:text-gold">
+                    tasteera24@gmail.com
+                  </a>
                 </InfoRow>
               </div>
 
-
               <a
                 href="https://maps.google.com/?q=Tasteera+Cafe+Sector+31+Gurugram"
-                target="_blank" rel="noopener noreferrer"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-10 inline-flex items-center gap-2 rounded-full bg-forest px-7 py-3 text-sm uppercase tracking-[0.18em] text-cream hover:opacity-90"
               >
                 Get Directions
@@ -418,7 +480,15 @@ function TasteeraHome() {
   );
 }
 
-function InfoRow({ icon: Icon, title, children }: { icon: React.ElementType; title: string; children: React.ReactNode }) {
+function InfoRow({
+  icon: Icon,
+  title,
+  children,
+}: {
+  icon: React.ElementType;
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <div className="flex gap-4">
       <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-forest/8 text-gold">
@@ -468,7 +538,12 @@ function MenuCard({ menu, onOpen }: { menu: MenuDocument; onOpen: () => void }) 
 
 function MenuPreview({ menu, onClose }: { menu: MenuDocument; onClose: () => void }) {
   return (
-    <div className="fixed inset-0 z-[70] overflow-y-auto bg-forest/85 px-4 py-6 backdrop-blur-sm md:py-10" role="dialog" aria-modal="true" aria-label={`${menu.label} preview`}>
+    <div
+      className="fixed inset-0 z-[70] overflow-y-auto bg-forest/85 px-4 py-6 backdrop-blur-sm md:py-10"
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${menu.label} preview`}
+    >
       <div className="mx-auto max-w-3xl overflow-hidden rounded-2xl bg-background shadow-elegant">
         <div className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-border bg-background/95 px-4 py-3 backdrop-blur md:px-6">
           <div className="min-w-0">
@@ -476,10 +551,19 @@ function MenuPreview({ menu, onClose }: { menu: MenuDocument; onClose: () => voi
             <div className="text-xs text-muted-foreground">{menu.caption}</div>
           </div>
           <div className="flex shrink-0 items-center gap-2">
-            <a href={menu.pdfUrl} download className="rounded-full bg-gold px-4 py-2 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-forest hover:opacity-90">
+            <a
+              href={menu.pdfUrl}
+              download
+              className="rounded-full bg-gold px-4 py-2 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-forest hover:opacity-90"
+            >
               Download PDF
             </a>
-            <button type="button" onClick={onClose} aria-label="Close menu preview" className="grid h-10 w-10 place-items-center rounded-full border border-border text-forest hover:border-gold hover:text-terracotta">
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Close menu preview"
+              className="grid h-10 w-10 place-items-center rounded-full border border-border text-forest hover:border-gold hover:text-terracotta"
+            >
               <X className="h-5 w-5" />
             </button>
           </div>
@@ -500,8 +584,6 @@ function MenuPreview({ menu, onClose }: { menu: MenuDocument; onClose: () => voi
   );
 }
 
-
-
 function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean) => void; scrolled: boolean }) {
   const links = [
     { href: "#about", label: "Story" },
@@ -511,27 +593,44 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
     { href: "#visit", label: "Visit" },
   ];
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-soft" : "bg-transparent"}`}>
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-soft" : "bg-transparent"}`}
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3" aria-label="Tasteera home">
-          <span className={`grid place-items-center overflow-hidden rounded-full ring-1 transition-all ${scrolled ? "h-11 w-11 bg-cream ring-forest/15" : "h-12 w-12 bg-cream/95 ring-cream/30 shadow-soft"}`}>
+          <span
+            className={`grid place-items-center overflow-hidden rounded-full ring-1 transition-all ${scrolled ? "h-11 w-11 bg-cream ring-forest/15" : "h-12 w-12 bg-cream/95 ring-cream/30 shadow-soft"}`}
+          >
             <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
           </span>
-          <span className={`font-display text-xl font-semibold tracking-wide transition-colors ${scrolled ? "text-forest" : "text-cream"}`}>
+          <span
+            className={`font-display text-xl font-semibold tracking-wide transition-colors ${scrolled ? "text-forest" : "text-cream"}`}
+          >
             Tasteéra
           </span>
         </a>
         <nav className="hidden items-center gap-9 md:flex">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className={`text-sm uppercase tracking-[0.18em] transition-colors ${scrolled ? "text-foreground/80 hover:text-forest" : "text-cream/80 hover:text-cream"}`}>
+            <a
+              key={l.href}
+              href={l.href}
+              className={`text-sm uppercase tracking-[0.18em] transition-colors ${scrolled ? "text-foreground/80 hover:text-forest" : "text-cream/80 hover:text-cream"}`}
+            >
               {l.label}
             </a>
           ))}
         </nav>
-        <a href="#reservations" className="hidden rounded-full bg-gold px-5 py-2.5 text-xs font-medium uppercase tracking-[0.18em] text-forest hover:opacity-90 md:inline-flex">
+        <a
+          href="#reservations"
+          className="hidden rounded-full bg-gold px-5 py-2.5 text-xs font-medium uppercase tracking-[0.18em] text-forest hover:opacity-90 md:inline-flex"
+        >
           Book Now
         </a>
-        <button onClick={() => setOpen(!open)} aria-label="Menu" className={`md:hidden ${scrolled ? "text-forest" : "text-cream"}`}>
+        <button
+          onClick={() => setOpen(!open)}
+          aria-label="Menu"
+          className={`md:hidden ${scrolled ? "text-forest" : "text-cream"}`}
+        >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
@@ -539,11 +638,20 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
         <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
           <nav className="flex flex-col px-6 py-6">
             {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-3 text-sm uppercase tracking-[0.18em] text-forest">
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="py-3 text-sm uppercase tracking-[0.18em] text-forest"
+              >
                 {l.label}
               </a>
             ))}
-            <a href="#reservations" onClick={() => setOpen(false)} className="mt-3 rounded-full bg-gold px-5 py-3 text-center text-xs font-medium uppercase tracking-[0.18em] text-forest">
+            <a
+              href="#reservations"
+              onClick={() => setOpen(false)}
+              className="mt-3 rounded-full bg-gold px-5 py-3 text-center text-xs font-medium uppercase tracking-[0.18em] text-forest"
+            >
               Book Now
             </a>
           </nav>
@@ -565,13 +673,17 @@ function Footer() {
             <div className="font-display text-3xl text-cream">Tasteéra</div>
           </div>
           <p className="mt-4 max-w-sm text-sm text-cream/65">
-            Cafe & Restaurant — where every plate tells a story. A warm, plant-filled corner of
-            Sector 31 serving Indian, Pan-Asian and Continental dishes alongside barista coffee,
-            mocktails and live music.
+            Cafe & Restaurant — where every plate tells a story. A warm, plant-filled corner of Sector 31 serving
+            Indian, Pan-Asian and Continental dishes alongside barista coffee, mocktails and live music.
           </p>
           <div className="mt-6 flex gap-3">
             {[Instagram, Facebook, Twitter].map((Icon, i) => (
-              <a key={i} href="#" aria-label="social" className="grid h-10 w-10 place-items-center rounded-full border border-cream/20 text-cream/80 hover:border-gold hover:text-gold">
+              <a
+                key={i}
+                href="#"
+                aria-label="social"
+                className="grid h-10 w-10 place-items-center rounded-full border border-cream/20 text-cream/80 hover:border-gold hover:text-gold"
+              >
                 <Icon className="h-4 w-4" />
               </a>
             ))}
@@ -581,25 +693,53 @@ function Footer() {
         <div>
           <div className="text-xs uppercase tracking-[0.22em] text-gold">Explore</div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="#about" className="hover:text-cream">Our Story</a></li>
-            <li><a href="#ambiance" className="hover:text-cream">Ambiance</a></li>
-            <li><a href="#menu" className="hover:text-cream">Menu</a></li>
-            <li><a href="#reservations" className="hover:text-cream">Reservations</a></li>
-            <li><a href="#visit" className="hover:text-cream">Visit Us</a></li>
+            <li>
+              <a href="#about" className="hover:text-cream">
+                Our Story
+              </a>
+            </li>
+            <li>
+              <a href="#ambiance" className="hover:text-cream">
+                Ambiance
+              </a>
+            </li>
+            <li>
+              <a href="#menu" className="hover:text-cream">
+                Menu
+              </a>
+            </li>
+            <li>
+              <a href="#reservations" className="hover:text-cream">
+                Reservations
+              </a>
+            </li>
+            <li>
+              <a href="#visit" className="hover:text-cream">
+                Visit Us
+              </a>
+            </li>
           </ul>
         </div>
 
         <div>
           <div className="text-xs uppercase tracking-[0.22em] text-gold">Find Us</div>
           <address className="mt-4 not-italic text-sm leading-relaxed text-cream/75">
-            First Floor, Huda Market,<br/>
-            SCO No. 40, Sector 31,<br/>
+            First Floor, Huda Market,
+            <br />
+            SCO No. 40, Sector 31,
+            <br />
             Gurugram, Haryana 122001
           </address>
           <div className="mt-3 space-y-1 text-sm">
-            <a href="tel:+917303336776" className="block hover:text-gold">073033 36776</a>
-            <a href="tel:+919217534918" className="block hover:text-gold">092175 34918</a>
-            <a href="mailto:tasteera24@gmail.com" className="block hover:text-gold">tasteera24@gmail.com</a>
+            <a href="tel:+917303336776" className="block hover:text-gold">
+              073033 36776
+            </a>
+            <a href="tel:+919217534918" className="block hover:text-gold">
+              092175 34918
+            </a>
+            <a href="mailto:tasteera24@gmail.com" className="block hover:text-gold">
+              tasteera24@gmail.com
+            </a>
           </div>
         </div>
       </div>
