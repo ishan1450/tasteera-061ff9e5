@@ -62,6 +62,24 @@ const galleryItems = [
   { img: ambMusic, label: "Live Music Nights", span: "md:col-span-2" },
 ];
 
+const foodMenuPages = [foodMenuPage1.url, foodMenuPage2.url];
+const drinksMenuPages = [
+  drinksMenuPage1.url, drinksMenuPage2.url, drinksMenuPage3.url, drinksMenuPage4.url,
+  drinksMenuPage5.url, drinksMenuPage6.url, drinksMenuPage7.url, drinksMenuPage8.url,
+  drinksMenuPage9.url, drinksMenuPage10.url, drinksMenuPage11.url, drinksMenuPage12.url,
+  drinksMenuPage13.url, drinksMenuPage14.url, drinksMenuPage15.url, drinksMenuPage16.url,
+  drinksMenuPage17.url, drinksMenuPage18.url,
+];
+
+type MenuDocument = {
+  icon: React.ElementType;
+  label: string;
+  caption: string;
+  cover: string;
+  pdfUrl: string;
+  pages: string[];
+};
+
 function useReveal() {
   useEffect(() => {
     document.documentElement.classList.add("js-reveal-ready");
