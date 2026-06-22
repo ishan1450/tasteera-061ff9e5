@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
-  Phone, MapPin, Clock, Utensils, Wine, Car, Leaf, Music2, Menu, X,
-  ChevronDown, Instagram, Facebook, Twitter,
+  Phone, MapPin, Clock, Utensils, Coffee, Car, Leaf, Music2, Menu, X,
+  ChevronDown, Instagram, Facebook, Twitter, Mail, BookOpen, GlassWater,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero_restaurant.jpg";
