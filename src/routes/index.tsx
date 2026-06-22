@@ -2,16 +2,13 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   Phone, MapPin, Clock, Utensils, Wine, Car, Leaf, Music2, Menu, X,
-  ChevronDown, Instagram, Facebook, Twitter, FileText,
+  ChevronDown, Instagram, Facebook, Twitter, FileText, ExternalLink,
 } from "lucide-react";
 
 import logoAsset from "@/assets/tasteera_logo.asset.json";
 import barAsset from "@/assets/tasteera_bar.asset.json";
 import pastaPlateAsset from "@/assets/tasteera_pasta_plate.asset.json";
 import breakfastAsset from "@/assets/tasteera_breakfast.asset.json";
-import interiorAsset from "@/assets/tasteera_interior.asset.json";
-import pastaAsset from "@/assets/tasteera_pasta.asset.json";
-import brunchAsset from "@/assets/tasteera_brunch.asset.json";
 import ambLamps from "@/assets/ambiance_lamps.jpg";
 import ambTable from "@/assets/ambiance_table.jpg";
 import ambMusic from "@/assets/ambiance_music.jpg";
@@ -39,6 +36,25 @@ const galleryItems = [
   { img: ambTable, label: "Set for the Evening" },
   { img: breakfastAsset.url, label: "Brunch Mornings" },
   { img: ambMusic, label: "Live Music Nights", span: "md:col-span-2" },
+];
+
+const menuGroups = [
+  {
+    title: "Indian signatures",
+    items: ["Dal Makhani", "Paneer Lababdar", "Butter Chicken", "Biryani", "Tandoori Platters"],
+  },
+  {
+    title: "Pan-Asian favourites",
+    items: ["Dim Sum", "Thai Curry", "Hakka Noodles", "Sushi Rolls", "Crispy Lotus Stem"],
+  },
+  {
+    title: "Continental plates",
+    items: ["Wood-Fired Pizza", "Creamy Pasta", "Grilled Fish", "Burgers", "Artisanal Salads"],
+  },
+  {
+    title: "Bar & café",
+    items: ["Signature Cocktails", "Mocktails", "Single Malts", "Fresh Brews", "Dessert Drinks"],
+  },
 ];
 
 function useReveal() {
@@ -84,7 +100,7 @@ function TasteeraHome() {
       <Nav open={navOpen} setOpen={setNavOpen} scrolled={scrolled} />
 
       {/* HERO */}
-      <section id="top" className="relative isolate h-[100svh] min-h-[640px] w-full overflow-hidden bg-forest">
+      <section id="top" className="relative isolate h-[100svh] min-h-[640px] w-full overflow-hidden bg-[var(--forest)]">
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img
             src={barAsset.url}
@@ -94,33 +110,33 @@ function TasteeraHome() {
             height={1080}
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/35 to-black/80" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,28,22,.34)_0%,rgba(18,28,22,.28)_42%,rgba(18,28,22,.82)_100%)]" />
 
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center">
           <span className="gold-divider animate-float-up" style={{ animationDelay: "0.1s" }}>
             Gurugram · Est. Sector 31
           </span>
-          <h1 className="mt-6 font-display text-[15vw] leading-[0.95] text-cream sm:text-7xl md:text-8xl lg:text-[8.5rem] animate-float-up text-balance" style={{ animationDelay: "0.25s" }}>
+          <h1 className="mt-6 font-display text-[15vw] leading-[0.95] text-[var(--cream)] sm:text-7xl md:text-8xl lg:text-[8.5rem] animate-float-up text-balance" style={{ animationDelay: "0.25s" }}>
             Tasteéra
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-cream/90 md:text-2xl font-display italic animate-float-up text-balance" style={{ animationDelay: "0.45s" }}>
+          <p className="mt-6 max-w-2xl text-lg text-[color-mix(in_oklch,var(--cream)_92%,transparent)] md:text-2xl font-display italic animate-float-up text-balance" style={{ animationDelay: "0.45s" }}>
             Where flavors meet timeless elegance.
           </p>
-          <p className="mt-3 max-w-xl text-sm text-cream/75 md:text-base animate-float-up" style={{ animationDelay: "0.55s" }}>
+          <p className="mt-3 max-w-xl text-sm text-[color-mix(in_oklch,var(--cream)_80%,transparent)] md:text-base animate-float-up" style={{ animationDelay: "0.55s" }}>
             Indian · Pan-Asian · Continental · Full Bar · Live Music
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row animate-float-up" style={{ animationDelay: "0.7s" }}>
-            <a href="#reservations" className="group inline-flex items-center justify-center rounded-full bg-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-forest transition hover:scale-[1.03] shadow-elegant">
+            <a href="#reservations" className="group inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--forest)] transition hover:scale-[1.03] shadow-elegant">
               Reserve a Table
             </a>
-            <a href="#menu" className="inline-flex items-center justify-center rounded-full border border-cream/40 bg-cream/5 px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-cream backdrop-blur transition hover:bg-cream/15">
+            <a href="#menu" className="inline-flex items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--cream)_42%,transparent)] bg-[color-mix(in_oklch,var(--cream)_10%,transparent)] px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--cream)] backdrop-blur transition hover:bg-[color-mix(in_oklch,var(--cream)_18%,transparent)]">
               View Menu
             </a>
           </div>
         </div>
 
-        <a href="#about" aria-label="Scroll down" className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-cream/80 hover:text-cream">
+        <a href="#about" aria-label="Scroll down" className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-[color-mix(in_oklch,var(--cream)_82%,transparent)] hover:text-[var(--cream)]">
           <ChevronDown className="h-7 w-7 animate-bounce" />
         </a>
       </section>
@@ -129,7 +145,7 @@ function TasteeraHome() {
       <section id="about" className="relative py-28 md:py-36">
         <div className="mx-auto max-w-4xl px-6 text-center reveal">
           <span className="gold-divider">Our Story</span>
-          <h2 className="mt-6 font-display text-4xl text-forest md:text-6xl text-balance">
+          <h2 className="mt-6 font-display text-4xl text-[var(--forest)] md:text-6xl text-balance">
             More than a meal.<br/>An <em className="text-terracotta not-italic font-display">experience</em>.
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-muted-foreground">
@@ -148,7 +164,7 @@ function TasteeraHome() {
             { k: "Nightly", v: "Live Music Sets" },
           ].map((s) => (
             <div key={s.v} className="rounded-2xl border border-border/70 bg-card/50 p-6 text-center backdrop-blur">
-              <div className="font-display text-3xl text-forest md:text-4xl">{s.k}</div>
+              <div className="font-display text-3xl text-[var(--forest)] md:text-4xl">{s.k}</div>
               <div className="mt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.v}</div>
             </div>
           ))}
@@ -156,51 +172,68 @@ function TasteeraHome() {
       </section>
 
       {/* MENU */}
-      <section id="menu" className="relative bg-cream/60 py-28 md:py-36 border-y border-border/60">
-        <div className="mx-auto max-w-4xl px-6 text-center reveal">
+      <section id="menu" className="relative border-y border-[color-mix(in_oklch,var(--gold)_26%,transparent)] bg-[linear-gradient(135deg,#efe1c8_0%,#f8f0df_48%,#d9e0cf_100%)] py-28 md:py-36">
+        <div className="mx-auto max-w-6xl px-6 reveal">
+          <div className="mx-auto max-w-3xl text-center">
           <span className="gold-divider">The Menu</span>
-          <h2 className="mt-6 font-display text-4xl text-forest md:text-6xl text-balance">
+          <h2 className="mt-6 font-display text-4xl text-[var(--forest)] md:text-6xl text-balance">
             A library of <em className="text-terracotta not-italic font-display">flavors</em>.
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
-            From slow-cooked Indian classics and hand-folded dim sum, to wood-fired pizzas,
-            artisan coffee, and a thoughtfully stocked bar — explore the full menus below.
+          <p className="mx-auto mt-6 max-w-2xl text-[color-mix(in_oklch,var(--forest)_78%,transparent)]">
+            A curated spread of Indian, Pan-Asian and Continental favourites, served with a full bar and café pours.
           </p>
+          </div>
 
-          <div className="mx-auto mt-12 grid max-w-2xl gap-4 sm:grid-cols-2">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {menuGroups.map((group) => (
+              <div key={group.title} className="rounded-2xl border border-[color-mix(in_oklch,var(--forest)_16%,transparent)] bg-[rgba(255,250,239,.72)] p-6 shadow-soft backdrop-blur">
+                <h3 className="font-display text-2xl text-[var(--forest)]">{group.title}</h3>
+                <ul className="mt-5 space-y-3 text-sm leading-relaxed text-[color-mix(in_oklch,var(--forest)_82%,transparent)]">
+                  {group.items.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--gold)]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-10 grid max-w-2xl gap-3 sm:grid-cols-2">
             <a
               href={foodMenu.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between rounded-2xl border border-border bg-background/70 px-6 py-5 text-left transition hover:border-gold hover:shadow-soft"
+              className="group flex items-center justify-between rounded-full border border-[color-mix(in_oklch,var(--forest)_18%,transparent)] bg-[rgba(31,48,38,.06)] px-5 py-4 text-left transition hover:border-[var(--gold)] hover:bg-[rgba(31,48,38,.1)]"
             >
               <div className="flex items-center gap-4">
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-forest/8 text-gold">
+                <span className="grid h-10 w-10 place-items-center rounded-full bg-[rgba(31,48,38,.08)] text-[var(--gold)]">
                   <FileText className="h-5 w-5" />
                 </span>
                 <div>
-                  <div className="font-display text-xl text-forest">Food Menu</div>
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">View PDF</div>
+                  <div className="font-display text-lg text-[var(--forest)]">Food Menu</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-[color-mix(in_oklch,var(--forest)_62%,transparent)]">PDF</div>
                 </div>
               </div>
-              <span className="text-gold opacity-60 transition group-hover:translate-x-1 group-hover:opacity-100">→</span>
+              <ExternalLink className="h-4 w-4 text-[var(--gold)] opacity-70 transition group-hover:opacity-100" />
             </a>
             <a
               href={drinksMenu.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between rounded-2xl border border-border bg-background/70 px-6 py-5 text-left transition hover:border-gold hover:shadow-soft"
+              className="group flex items-center justify-between rounded-full border border-[color-mix(in_oklch,var(--forest)_18%,transparent)] bg-[rgba(31,48,38,.06)] px-5 py-4 text-left transition hover:border-[var(--gold)] hover:bg-[rgba(31,48,38,.1)]"
             >
               <div className="flex items-center gap-4">
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-forest/8 text-gold">
+                <span className="grid h-10 w-10 place-items-center rounded-full bg-[rgba(31,48,38,.08)] text-[var(--gold)]">
                   <Wine className="h-5 w-5" />
                 </span>
                 <div>
-                  <div className="font-display text-xl text-forest">Drinks Menu</div>
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground">View PDF</div>
+                  <div className="font-display text-lg text-[var(--forest)]">Drinks Menu</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-[color-mix(in_oklch,var(--forest)_62%,transparent)]">PDF</div>
                 </div>
               </div>
-              <span className="text-gold opacity-60 transition group-hover:translate-x-1 group-hover:opacity-100">→</span>
+              <ExternalLink className="h-4 w-4 text-[var(--gold)] opacity-70 transition group-hover:opacity-100" />
             </a>
           </div>
         </div>
@@ -262,13 +295,15 @@ function TasteeraHome() {
       </section>
 
       {/* RESERVATIONS — light, classy, complements landing */}
-      <section id="reservations" className="relative bg-background py-28 md:py-36">
-        <div className="mx-auto max-w-3xl px-6 text-center reveal">
+      <section id="reservations" className="relative overflow-hidden bg-[var(--forest)] py-28 text-[var(--cream)] md:py-36">
+          <div className="absolute inset-0 opacity-[0.18]" style={{ backgroundImage: `url(${barAsset.url})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(25,41,31,.95),rgba(25,41,31,.84)_48%,rgba(108,73,43,.78))]" />
+        <div className="relative z-10 mx-auto max-w-3xl px-6 text-center reveal">
           <span className="gold-divider">Bookings</span>
-          <h2 className="mt-6 font-display text-5xl text-forest md:text-7xl text-balance">
+          <h2 className="mt-6 font-display text-5xl text-[var(--cream)] md:text-7xl text-balance">
             Reserve Your Table
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-muted-foreground">
+          <p className="mx-auto mt-6 max-w-xl text-[color-mix(in_oklch,var(--cream)_78%,transparent)]">
             Choose your preferred partner — your seat at Tasteera is one click away.
           </p>
 
@@ -280,18 +315,18 @@ function TasteeraHome() {
               { name: "Swiggy Dineout", url: "https://www.swiggy.com/restaurants/tasteera-cafe-huda-city-gurgaon-1344498/dineout" },
             ].map((p) => (
               <a key={p.name} href={p.url} target="_blank" rel="noopener noreferrer"
-                className="group flex items-center justify-between rounded-2xl border border-border bg-card/60 px-6 py-5 text-left text-forest transition hover:border-gold hover:bg-card hover:shadow-soft">
+                className="group flex items-center justify-between rounded-2xl border border-[rgba(245,232,202,.2)] bg-[rgba(245,232,202,.08)] px-6 py-5 text-left text-[var(--cream)] backdrop-blur transition hover:border-[var(--gold)] hover:bg-[rgba(245,232,202,.14)]">
                 <span className="font-display text-2xl">{p.name}</span>
-                <span className="text-xs uppercase tracking-[0.2em] text-gold opacity-70 transition group-hover:translate-x-1 group-hover:opacity-100">
+                <span className="text-xs uppercase tracking-[0.2em] text-[var(--gold)] opacity-80 transition group-hover:translate-x-1 group-hover:opacity-100">
                   Book →
                 </span>
               </a>
             ))}
           </div>
 
-          <p className="mt-10 text-sm text-muted-foreground">
+          <p className="mt-10 text-sm text-[color-mix(in_oklch,var(--cream)_72%,transparent)]">
             Walk-ins welcome. For large parties, call us at{" "}
-            <a href="tel:+917303336776" className="text-terracotta underline-offset-4 hover:underline">
+            <a href="tel:+917303336776" className="text-[var(--gold)] underline-offset-4 hover:underline">
               +91 73033 36776
             </a>.
           </p>
@@ -299,7 +334,7 @@ function TasteeraHome() {
       </section>
 
       {/* LOCATION & HOURS */}
-      <section id="visit" className="py-28 md:py-36 bg-cream/60 border-t border-border/60">
+      <section id="visit" className="py-28 md:py-36 bg-[linear-gradient(180deg,#f7eddb_0%,#e7d5b8_100%)] border-t border-[color-mix(in_oklch,var(--gold)_26%,transparent)]">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="reveal">
