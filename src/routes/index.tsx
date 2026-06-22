@@ -69,10 +69,11 @@ function TasteeraHome() {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
       if (heroRef.current) {
-        const y = window.scrollY;
-        heroRef.current.style.transform = `translate3d(0, ${y * 0.35}px, 0)`;
+        const y = Math.min(window.scrollY, window.innerHeight);
+        heroRef.current.style.transform = `translate3d(0, ${y * -0.15}px, 0)`;
       }
     };
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
