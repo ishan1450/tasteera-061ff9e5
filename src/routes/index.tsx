@@ -333,8 +333,12 @@ function TasteeraHome() {
                 </InfoRow>
                 <InfoRow icon={Phone} title="Call">
                   <a href="tel:+917303336776" className="hover:text-gold">073033 36776</a>
+                  <span className="text-muted-foreground"> · </span>
+                  <a href="tel:+919217534918" className="hover:text-gold">092175 34918</a>
                 </InfoRow>
-              </div>
+                <InfoRow icon={Mail} title="Email">
+                  <a href="mailto:tasteera24@gmail.com" className="hover:text-gold">tasteera24@gmail.com</a>
+                </InfoRow>
 
               <a
                 href="https://maps.google.com/?q=Tasteera+Cafe+Sector+31+Gurugram"
