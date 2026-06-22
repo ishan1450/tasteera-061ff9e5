@@ -114,8 +114,8 @@ function TasteeraHome() {
             <a href="#reservations" className="group inline-flex items-center justify-center rounded-full bg-gold px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-forest transition hover:scale-[1.03] shadow-elegant">
               Reserve a Table
             </a>
-            <a href="#menu" className="inline-flex items-center justify-center rounded-full border border-cream/40 bg-cream/5 px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-cream backdrop-blur transition hover:bg-cream/15">
-              View Menu
+            <a href="#visit" className="inline-flex items-center justify-center rounded-full border border-cream/40 bg-cream/5 px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-cream backdrop-blur transition hover:bg-cream/15">
+              Visit Us
             </a>
           </div>
         </div>
@@ -376,7 +376,6 @@ function InfoRow({ icon: Icon, title, children }: { icon: React.ElementType; tit
 function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean) => void; scrolled: boolean }) {
   const links = [
     { href: "#about", label: "Story" },
-    { href: "#menu", label: "Menu" },
     { href: "#ambiance", label: "Ambiance" },
     { href: "#reservations", label: "Reserve" },
     { href: "#visit", label: "Visit" },
@@ -443,7 +442,6 @@ function Footer() {
           <div className="text-xs uppercase tracking-[0.22em] text-gold">Explore</div>
           <ul className="mt-4 space-y-2 text-sm">
             <li><a href="#about" className="hover:text-cream">Our Story</a></li>
-            <li><a href="#menu" className="hover:text-cream">Signature Dishes</a></li>
             <li><a href="#ambiance" className="hover:text-cream">Ambiance</a></li>
             <li><a href="#reservations" className="hover:text-cream">Reservations</a></li>
             <li><a href="#visit" className="hover:text-cream">Visit Us</a></li>
