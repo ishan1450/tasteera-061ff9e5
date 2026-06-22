@@ -126,7 +126,7 @@ const menuDocuments: MenuDocument[] = [
   },
   {
     icon: GlassWater,
-    label: "Drinks Menu",
+    label: "Food Menu",
     caption: "Coffee · Mocktails · Juices",
     cover: foodMenuCover.url,
     pdfUrl: drinksMenuAsset.url,
