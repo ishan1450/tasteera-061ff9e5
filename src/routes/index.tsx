@@ -181,7 +181,7 @@ function TasteeraHome() {
             A library of <em className="text-terracotta not-italic font-display">flavors</em>.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[color-mix(in_oklch,var(--forest)_78%,transparent)]">
-            A curated spread of Indian, Pan-Asian and Continental favourites, served with a full bar and café pours.
+            A curated spread of Indian, Pan-Asian and Continental favourites, paired with café brews and house mocktails.
           </p>
           </div>
 
@@ -201,37 +201,20 @@ function TasteeraHome() {
             ))}
           </div>
 
-          <div className="mx-auto mt-10 grid max-w-2xl gap-3 sm:grid-cols-2">
+          <div className="mx-auto mt-10 flex max-w-md justify-center">
             <a
               href={foodMenu.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between rounded-full border border-[color-mix(in_oklch,var(--forest)_18%,transparent)] bg-[rgba(31,48,38,.06)] px-5 py-4 text-left transition hover:border-[var(--gold)] hover:bg-[rgba(31,48,38,.1)]"
+              className="group flex w-full items-center justify-between rounded-full border border-[color-mix(in_oklch,var(--forest)_18%,transparent)] bg-[rgba(31,48,38,.06)] px-6 py-4 text-left transition hover:border-[var(--gold)] hover:bg-[rgba(31,48,38,.1)]"
             >
               <div className="flex items-center gap-4">
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-[rgba(31,48,38,.08)] text-[var(--gold)]">
                   <FileText className="h-5 w-5" />
                 </span>
                 <div>
-                  <div className="font-display text-lg text-[var(--forest)]">Food Menu</div>
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-[color-mix(in_oklch,var(--forest)_62%,transparent)]">PDF</div>
-                </div>
-              </div>
-              <ExternalLink className="h-4 w-4 text-[var(--gold)] opacity-70 transition group-hover:opacity-100" />
-            </a>
-            <a
-              href={drinksMenu.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between rounded-full border border-[color-mix(in_oklch,var(--forest)_18%,transparent)] bg-[rgba(31,48,38,.06)] px-5 py-4 text-left transition hover:border-[var(--gold)] hover:bg-[rgba(31,48,38,.1)]"
-            >
-              <div className="flex items-center gap-4">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-[rgba(31,48,38,.08)] text-[var(--gold)]">
-                  <Wine className="h-5 w-5" />
-                </span>
-                <div>
-                  <div className="font-display text-lg text-[var(--forest)]">Drinks Menu</div>
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-[color-mix(in_oklch,var(--forest)_62%,transparent)]">PDF</div>
+                  <div className="font-display text-lg text-[var(--forest)]">View Full Menu</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-[color-mix(in_oklch,var(--forest)_62%,transparent)]">Opens PDF</div>
                 </div>
               </div>
               <ExternalLink className="h-4 w-4 text-[var(--gold)] opacity-70 transition group-hover:opacity-100" />
@@ -239,6 +222,7 @@ function TasteeraHome() {
           </div>
         </div>
       </section>
+
 
       {/* AMBIANCE / GALLERY */}
       <section id="ambiance" className="relative py-28 md:py-36">
