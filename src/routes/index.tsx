@@ -343,6 +343,7 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
   const links = [
     { href: "#about", label: "Story" },
     { href: "#ambiance", label: "Ambiance" },
+    { href: "#menu", label: "Menu" },
     { href: "#reservations", label: "Reserve" },
     { href: "#visit", label: "Visit" },
   ];
