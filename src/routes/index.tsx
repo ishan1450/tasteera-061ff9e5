@@ -80,6 +80,25 @@ type MenuDocument = {
   pages: string[];
 };
 
+const menuDocuments: MenuDocument[] = [
+  {
+    icon: BookOpen,
+    label: "Food Menu",
+    caption: "Indian · Pan-Asian · Continental",
+    cover: drinksMenuCover.url,
+    pdfUrl: foodMenuAsset.url,
+    pages: foodMenuPages,
+  },
+  {
+    icon: GlassWater,
+    label: "Drinks Menu",
+    caption: "Coffee · Mocktails · Juices",
+    cover: foodMenuCover.url,
+    pdfUrl: drinksMenuAsset.url,
+    pages: drinksMenuPages,
+  },
+];
+
 function useReveal() {
   useEffect(() => {
     document.documentElement.classList.add("js-reveal-ready");
