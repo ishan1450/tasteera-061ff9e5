@@ -439,11 +439,16 @@ function Footer() {
     <footer className="bg-forest text-cream/80">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="font-display text-3xl text-cream">Tasteéra</div>
+          <div className="flex items-center gap-3">
+            <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-full bg-cream ring-1 ring-cream/30">
+              <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
+            </span>
+            <div className="font-display text-3xl text-cream">Tasteéra</div>
+          </div>
           <p className="mt-4 max-w-sm text-sm text-cream/65">
             Cafe & Restaurant — where every plate tells a story. A warm, plant-filled corner of
-            Sector 31 serving Indian, Pan-Asian and Continental dishes alongside cocktails and
-            live music.
+            Sector 31 serving Indian, Pan-Asian and Continental dishes alongside barista coffee,
+            mocktails and live music.
           </p>
           <div className="mt-6 flex gap-3">
             {[Instagram, Facebook, Twitter].map((Icon, i) => (
@@ -459,6 +464,7 @@ function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><a href="#about" className="hover:text-cream">Our Story</a></li>
             <li><a href="#ambiance" className="hover:text-cream">Ambiance</a></li>
+            <li><a href="#menu" className="hover:text-cream">Menu</a></li>
             <li><a href="#reservations" className="hover:text-cream">Reservations</a></li>
             <li><a href="#visit" className="hover:text-cream">Visit Us</a></li>
           </ul>
@@ -471,7 +477,11 @@ function Footer() {
             SCO No. 40, Sector 31,<br/>
             Gurugram, Haryana 122001
           </address>
-          <a href="tel:+917303336776" className="mt-3 inline-block text-sm hover:text-gold">073033 36776</a>
+          <div className="mt-3 space-y-1 text-sm">
+            <a href="tel:+917303336776" className="block hover:text-gold">073033 36776</a>
+            <a href="tel:+919217534918" className="block hover:text-gold">092175 34918</a>
+            <a href="mailto:tasteera24@gmail.com" className="block hover:text-gold">tasteera24@gmail.com</a>
+          </div>
         </div>
       </div>
       <div className="border-t border-cream/10">
