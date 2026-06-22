@@ -381,6 +381,60 @@ function InfoRow({ icon: Icon, title, children }: { icon: React.ElementType; tit
   );
 }
 
+function MenuCard({
+  icon: Icon, label, caption, cover, pdfUrl,
+}: {
+  icon: React.ElementType;
+  label: string;
+  caption: string;
+  cover: string;
+  pdfUrl: string;
+}) {
+  const handleOpen = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Resolve a fully-qualified URL so the new tab keeps the path even when
+    // the page is loaded inside an editor iframe (Safari sometimes drops
+    // the path on relative target=_blank navigations from an iframe).
+    if (typeof window === "undefined") return;
+    e.preventDefault();
+    const absolute = new URL(pdfUrl, window.location.origin).toString();
+    window.open(absolute, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <a
+      href={pdfUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={handleOpen}
+      className="group relative flex overflow-hidden rounded-2xl border border-border bg-card text-left shadow-soft transition hover:-translate-y-0.5 hover:border-gold/60 hover:shadow-elegant"
+      aria-label={`Open ${label} PDF in a new tab`}
+    >
+      <div className="relative h-32 w-24 shrink-0 overflow-hidden bg-muted sm:h-36 sm:w-28">
+        <img
+          src={cover}
+          alt={`${label} cover preview`}
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-y-0 right-0 w-1 bg-gradient-to-l from-black/15 to-transparent" />
+      </div>
+      <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 p-5">
+        <span className="inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.22em] text-gold">
+          <Icon className="h-3.5 w-3.5" />
+          PDF Menu
+        </span>
+        <span className="font-display text-2xl text-forest">{label}</span>
+        <span className="text-xs text-muted-foreground">{caption}</span>
+        <span className="mt-1 text-[0.7rem] uppercase tracking-[0.22em] text-terracotta transition group-hover:translate-x-1">
+          Open →
+        </span>
+      </div>
+    </a>
+  );
+}
+
+
+
 function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean) => void; scrolled: boolean }) {
   const links = [
     { href: "#about", label: "Story" },
