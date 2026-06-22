@@ -1,36 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
-  Phone, MapPin, Clock, Utensils, Wine, Car, Leaf, Music2, Menu, X,
+  Phone, MapPin, Clock, Utensils, Car, Leaf, Music2, Menu, X,
   ChevronDown, Instagram, Facebook, Twitter, FileText, ExternalLink,
 } from "lucide-react";
 
 import logoAsset from "@/assets/tasteera_logo.asset.json";
-import barAsset from "@/assets/tasteera_bar.asset.json";
+
+import interiorAsset from "@/assets/tasteera_interior.asset.json";
 import pastaPlateAsset from "@/assets/tasteera_pasta_plate.asset.json";
 import breakfastAsset from "@/assets/tasteera_breakfast.asset.json";
 import ambLamps from "@/assets/ambiance_lamps.jpg";
 import ambTable from "@/assets/ambiance_table.jpg";
 import ambMusic from "@/assets/ambiance_music.jpg";
 import foodMenu from "@/assets/tasteera_food_menu.asset.json";
-import drinksMenu from "@/assets/tasteera_drinks_menu.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Tasteera Cafe & Restaurant — Gurugram | Where Flavors Meet Timeless Elegance" },
-      { name: "description", content: "Tasteera in Sector 31, Gurugram serves Indian, Pan-Asian & Continental cuisine in a warm, plant-filled space with live music and a full bar. Reserve your table today." },
+      { name: "description", content: "Tasteera in Sector 31, Gurugram serves Indian, Pan-Asian & Continental cuisine in a warm, plant-filled café space with live music. Reserve your table today." },
       { property: "og:title", content: "Tasteera Cafe & Restaurant — Gurugram" },
-      { property: "og:description", content: "Where flavors meet timeless elegance. Upscale-casual dining, live music & full bar in Sector 31, Gurugram." },
-      { property: "og:image", content: barAsset.url },
-      { property: "twitter:image", content: barAsset.url },
+      { property: "og:description", content: "Where every plate tells a story. Upscale-casual dining, café brews & live music in Sector 31, Gurugram." },
+      { property: "og:image", content: interiorAsset.url },
+      { property: "twitter:image", content: interiorAsset.url },
     ],
   }),
   component: TasteeraHome,
 });
 
 const galleryItems = [
-  { img: barAsset.url, label: "The Bar & Dining Room", span: "md:col-span-2 md:row-span-2" },
+  { img: interiorAsset.url, label: "The Dining Room", span: "md:col-span-2 md:row-span-2" },
   { img: ambLamps, label: "Light & Greenery" },
   { img: pastaPlateAsset.url, label: "Plated With Care" },
   { img: ambTable, label: "Set for the Evening" },
@@ -52,8 +52,8 @@ const menuGroups = [
     items: ["Wood-Fired Pizza", "Creamy Pasta", "Grilled Fish", "Burgers", "Artisanal Salads"],
   },
   {
-    title: "Bar & café",
-    items: ["Signature Cocktails", "Mocktails", "Single Malts", "Fresh Brews", "Dessert Drinks"],
+    title: "Café & desserts",
+    items: ["Mocktails", "Fresh Brews", "Cold Coffee", "Smoothies", "Dessert Jars"],
   },
 ];
 
@@ -103,8 +103,8 @@ function TasteeraHome() {
       <section id="top" className="relative isolate h-[100svh] min-h-[640px] w-full overflow-hidden bg-[var(--forest)]">
         <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img
-            src={barAsset.url}
-            alt="Warm interior of Tasteera with teal chairs, wood bar and rattan lamps"
+            src={interiorAsset.url}
+            alt="Warm interior of Tasteera with rattan pendant lamps, teal chairs and lush greenery"
             className="h-full w-full object-cover animate-ken-burns"
             width={1920}
             height={1080}
@@ -120,18 +120,18 @@ function TasteeraHome() {
             Tasteéra
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-[color-mix(in_oklch,var(--cream)_92%,transparent)] md:text-2xl font-display italic animate-float-up text-balance" style={{ animationDelay: "0.45s" }}>
-            Where flavors meet timeless elegance.
+            Where every plate tells a story.
           </p>
           <p className="mt-3 max-w-xl text-sm text-[color-mix(in_oklch,var(--cream)_80%,transparent)] md:text-base animate-float-up" style={{ animationDelay: "0.55s" }}>
-            Indian · Pan-Asian · Continental · Full Bar · Live Music
+            Indian · Pan-Asian · Continental · Live Music
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row animate-float-up" style={{ animationDelay: "0.7s" }}>
             <a href="#reservations" className="group inline-flex items-center justify-center rounded-full bg-[var(--gold)] px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--forest)] transition hover:scale-[1.03] shadow-elegant">
               Reserve a Table
             </a>
-            <a href="#menu" className="inline-flex items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--cream)_42%,transparent)] bg-[color-mix(in_oklch,var(--cream)_10%,transparent)] px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--cream)] backdrop-blur transition hover:bg-[color-mix(in_oklch,var(--cream)_18%,transparent)]">
-              View Menu
+            <a href="#visit" className="inline-flex items-center justify-center rounded-full border border-[color-mix(in_oklch,var(--cream)_42%,transparent)] bg-[color-mix(in_oklch,var(--cream)_10%,transparent)] px-8 py-4 text-sm font-medium uppercase tracking-[0.18em] text-[var(--cream)] backdrop-blur transition hover:bg-[color-mix(in_oklch,var(--cream)_18%,transparent)]">
+              Visit Us
             </a>
           </div>
         </div>
@@ -140,6 +140,7 @@ function TasteeraHome() {
           <ChevronDown className="h-7 w-7 animate-bounce" />
         </a>
       </section>
+
 
       {/* ABOUT */}
       <section id="about" className="relative py-28 md:py-36">
@@ -180,7 +181,7 @@ function TasteeraHome() {
             A library of <em className="text-terracotta not-italic font-display">flavors</em>.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-[color-mix(in_oklch,var(--forest)_78%,transparent)]">
-            A curated spread of Indian, Pan-Asian and Continental favourites, served with a full bar and café pours.
+            A curated spread of Indian, Pan-Asian and Continental favourites, paired with café brews and house mocktails.
           </p>
           </div>
 
@@ -200,37 +201,20 @@ function TasteeraHome() {
             ))}
           </div>
 
-          <div className="mx-auto mt-10 grid max-w-2xl gap-3 sm:grid-cols-2">
+          <div className="mx-auto mt-10 flex max-w-md justify-center">
             <a
               href={foodMenu.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between rounded-full border border-[color-mix(in_oklch,var(--forest)_18%,transparent)] bg-[rgba(31,48,38,.06)] px-5 py-4 text-left transition hover:border-[var(--gold)] hover:bg-[rgba(31,48,38,.1)]"
+              className="group flex w-full items-center justify-between rounded-full border border-[color-mix(in_oklch,var(--forest)_18%,transparent)] bg-[rgba(31,48,38,.06)] px-6 py-4 text-left transition hover:border-[var(--gold)] hover:bg-[rgba(31,48,38,.1)]"
             >
               <div className="flex items-center gap-4">
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-[rgba(31,48,38,.08)] text-[var(--gold)]">
                   <FileText className="h-5 w-5" />
                 </span>
                 <div>
-                  <div className="font-display text-lg text-[var(--forest)]">Food Menu</div>
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-[color-mix(in_oklch,var(--forest)_62%,transparent)]">PDF</div>
-                </div>
-              </div>
-              <ExternalLink className="h-4 w-4 text-[var(--gold)] opacity-70 transition group-hover:opacity-100" />
-            </a>
-            <a
-              href={drinksMenu.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between rounded-full border border-[color-mix(in_oklch,var(--forest)_18%,transparent)] bg-[rgba(31,48,38,.06)] px-5 py-4 text-left transition hover:border-[var(--gold)] hover:bg-[rgba(31,48,38,.1)]"
-            >
-              <div className="flex items-center gap-4">
-                <span className="grid h-10 w-10 place-items-center rounded-full bg-[rgba(31,48,38,.08)] text-[var(--gold)]">
-                  <Wine className="h-5 w-5" />
-                </span>
-                <div>
-                  <div className="font-display text-lg text-[var(--forest)]">Drinks Menu</div>
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-[color-mix(in_oklch,var(--forest)_62%,transparent)]">PDF</div>
+                  <div className="font-display text-lg text-[var(--forest)]">View Full Menu</div>
+                  <div className="text-[11px] uppercase tracking-[0.2em] text-[color-mix(in_oklch,var(--forest)_62%,transparent)]">Opens PDF</div>
                 </div>
               </div>
               <ExternalLink className="h-4 w-4 text-[var(--gold)] opacity-70 transition group-hover:opacity-100" />
@@ -238,6 +222,7 @@ function TasteeraHome() {
           </div>
         </div>
       </section>
+
 
       {/* AMBIANCE / GALLERY */}
       <section id="ambiance" className="relative py-28 md:py-36">
@@ -276,9 +261,9 @@ function TasteeraHome() {
           {[
             { icon: Utensils, label: "Indian · Pan-Asian · Continental" },
             { icon: Leaf, label: "Veg & Non-Veg" },
-            { icon: Wine, label: "Full Bar Available" },
-            { icon: Car, label: "Parking Available" },
             { icon: Music2, label: "Live Music Nights" },
+            { icon: Car, label: "Parking Available" },
+            { icon: () => <span className="font-display text-xl text-gold">☕</span>, label: "Café & Mocktails" },
             { icon: () => <span className="font-display text-xl text-gold">₹</span>, label: "₹800–1600 for two" },
           ].map((it) => {
             const Icon = it.icon as React.ElementType;
@@ -296,7 +281,7 @@ function TasteeraHome() {
 
       {/* RESERVATIONS — light, classy, complements landing */}
       <section id="reservations" className="relative overflow-hidden bg-[var(--forest)] py-28 text-[var(--cream)] md:py-36">
-          <div className="absolute inset-0 opacity-[0.18]" style={{ backgroundImage: `url(${barAsset.url})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+          <div className="absolute inset-0 opacity-[0.18]" style={{ backgroundImage: `url(${interiorAsset.url})`, backgroundSize: "cover", backgroundPosition: "center" }} />
         <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(25,41,31,.95),rgba(25,41,31,.84)_48%,rgba(108,73,43,.78))]" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center reveal">
           <span className="gold-divider">Bookings</span>
@@ -402,11 +387,11 @@ function InfoRow({ icon: Icon, title, children }: { icon: React.ElementType; tit
 
 function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean) => void; scrolled: boolean }) {
   const links = [
-    { href: "#about", label: "Story" },
-    { href: "#menu", label: "Menu" },
-    { href: "#ambiance", label: "Ambiance" },
-    { href: "#reservations", label: "Reserve" },
-    { href: "#visit", label: "Visit" },
+    { href: "#about", label: "Story", external: false },
+    { href: foodMenu.url, label: "Menu", external: true },
+    { href: "#ambiance", label: "Ambiance", external: false },
+    { href: "#reservations", label: "Reserve", external: false },
+    { href: "#visit", label: "Visit", external: false },
   ];
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-soft" : "bg-transparent"}`}>
@@ -421,7 +406,7 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
         </a>
         <nav className="hidden items-center gap-9 md:flex">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className={`text-sm uppercase tracking-[0.18em] transition-colors ${scrolled ? "text-foreground/80 hover:text-forest" : "text-cream/85 hover:text-cream"}`}>
+            <a key={l.label} href={l.href} {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} className={`text-sm uppercase tracking-[0.18em] transition-colors ${scrolled ? "text-foreground/80 hover:text-forest" : "text-cream/85 hover:text-cream"}`}>
               {l.label}
             </a>
           ))}
@@ -437,7 +422,7 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
         <div className="md:hidden bg-background/95 backdrop-blur-md border-t border-border">
           <nav className="flex flex-col px-6 py-6">
             {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-3 text-sm uppercase tracking-[0.18em] text-forest">
+              <a key={l.label} href={l.href} {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} onClick={() => setOpen(false)} className="py-3 text-sm uppercase tracking-[0.18em] text-forest">
                 {l.label}
               </a>
             ))}
@@ -465,7 +450,7 @@ function Footer() {
           </div>
           <p className="mt-4 max-w-sm text-sm text-[#5a3b3f]/80">
             Where flavors meet timeless elegance. A warm, plant-filled corner of Sector 31
-            serving Indian, Pan-Asian and Continental dishes alongside cocktails and live music.
+            serving Indian, Pan-Asian and Continental dishes alongside café brews, mocktails and live music.
           </p>
           <div className="mt-6 flex gap-3">
             {[Instagram, Facebook, Twitter].map((Icon, i) => (
