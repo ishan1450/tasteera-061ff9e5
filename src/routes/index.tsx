@@ -69,10 +69,11 @@ function TasteeraHome() {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
       if (heroRef.current) {
-        const y = window.scrollY;
-        heroRef.current.style.transform = `translate3d(0, ${y * 0.35}px, 0)`;
+        const y = Math.min(window.scrollY, window.innerHeight);
+        heroRef.current.style.transform = `translate3d(0, ${y * -0.15}px, 0)`;
       }
     };
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -82,8 +83,8 @@ function TasteeraHome() {
       <Nav open={navOpen} setOpen={setNavOpen} scrolled={scrolled} />
 
       {/* HERO */}
-      <section id="top" className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
-        <div ref={heroRef} className="absolute inset-0 -z-10 will-change-transform">
+      <section id="top" className="relative isolate h-[100svh] min-h-[640px] w-full overflow-hidden bg-forest">
+        <div ref={heroRef} className="absolute inset-0 will-change-transform">
           <img
             src={heroImg}
             alt="Warm interior of Tasteera restaurant with rattan lamps and teal chairs"
@@ -91,8 +92,9 @@ function TasteeraHome() {
             width={1920}
             height={1080}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/40 to-black/80" />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/45 to-black/85" />
+
 
         <div className="relative z-10 mx-auto flex h-full max-w-6xl flex-col items-center justify-center px-6 text-center">
           <span className="gold-divider animate-float-up" style={{ animationDelay: "0.1s" }}>
@@ -221,15 +223,15 @@ function TasteeraHome() {
       </section>
 
       {/* RESERVATIONS */}
-      <section id="reservations" className="relative overflow-hidden py-28 md:py-36">
+      <section id="reservations" className="relative isolate overflow-hidden bg-forest py-28 md:py-36">
         <div
-          className="absolute inset-0 -z-10 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{ backgroundImage: `url(${ambTable})` }}
           aria-hidden
         />
-        <div className="absolute inset-0 -z-10 bg-forest/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest via-forest/95 to-forest" />
 
-        <div className="mx-auto max-w-3xl px-6 text-center text-cream reveal">
+        <div className="relative mx-auto max-w-3xl px-6 text-center text-cream reveal">
           <span className="gold-divider">Bookings</span>
           <h2 className="mt-6 font-display text-5xl md:text-7xl text-balance">
             Reserve Your Table
