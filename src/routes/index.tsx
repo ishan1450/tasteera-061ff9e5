@@ -39,12 +39,22 @@ const galleryItems = [
 
 function useReveal() {
   useEffect(() => {
+    document.documentElement.classList.add("js-reveal-ready");
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add("in")),
-      { threshold: 0.12 }
+      (entries) => entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("in");
+          io.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" }
     );
-    els.forEach((el) => io.observe(el));
+    els.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add("in");
+      else io.observe(el);
+    });
     return () => io.disconnect();
   }, []);
 }
