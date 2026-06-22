@@ -19,10 +19,10 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Tasteera Cafe & Restaurant — Gurugram | Where Flavors Meet Timeless Elegance" },
-      { name: "description", content: "Tasteera in Sector 31, Gurugram serves Indian, Pan-Asian & Continental cuisine in a warm, plant-filled space with live music and a full bar. Reserve your table today." },
+      { name: "description", content: "Tasteera in Sector 31, Gurugram serves Indian, Pan-Asian & Continental cuisine in a warm, plant-filled café space with live music. Reserve your table today." },
       { property: "og:title", content: "Tasteera Cafe & Restaurant — Gurugram" },
-      { property: "og:description", content: "Where flavors meet timeless elegance. Upscale-casual dining, live music & full bar in Sector 31, Gurugram." },
-      { property: "og:image", content: barAsset.url },
+      { property: "og:description", content: "Where every plate tells a story. Upscale-casual dining, café brews & live music in Sector 31, Gurugram." },
+      { property: "og:image", content: interiorAsset.url },
       { property: "twitter:image", content: barAsset.url },
     ],
   }),
