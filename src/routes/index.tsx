@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
-  Phone, MapPin, Clock, Utensils, Wine, Car, Leaf, Music2, Menu, X,
-  ChevronDown, Instagram, Facebook, Twitter,
+  Phone, MapPin, Clock, Utensils, Coffee, Car, Leaf, Music2, Menu, X,
+  ChevronDown, Instagram, Facebook, Twitter, Mail, BookOpen, GlassWater,
 } from "lucide-react";
 
 import heroImg from "@/assets/hero_restaurant.jpg";
@@ -12,6 +12,9 @@ import brunchAsset from "@/assets/tasteera_brunch.asset.json";
 import ambLamps from "@/assets/ambiance_lamps.jpg";
 import ambTable from "@/assets/ambiance_table.jpg";
 import ambMusic from "@/assets/ambiance_music.jpg";
+import logoAsset from "@/assets/tasteera_logo.asset.json";
+import foodMenuAsset from "@/assets/tasteera_food_menu.asset.json";
+import drinksMenuAsset from "@/assets/tasteera_drinks_menu.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -107,7 +110,7 @@ function TasteeraHome() {
             Where every plate tells a story.
           </p>
           <p className="mt-3 max-w-xl text-sm text-cream/65 md:text-base animate-float-up" style={{ animationDelay: "0.55s" }}>
-            Indian · Pan-Asian · Continental · Full Bar · Live Music
+            Indian · Pan-Asian · Continental · Coffee & Mocktails · Live Music
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row animate-float-up" style={{ animationDelay: "0.7s" }}>
@@ -204,7 +207,7 @@ function TasteeraHome() {
           {[
             { icon: Utensils, label: "Indian · Pan-Asian · Continental" },
             { icon: Leaf, label: "Veg & Non-Veg" },
-            { icon: Wine, label: "Full Bar Available" },
+            { icon: Coffee, label: "Coffee, Mocktails & Fresh Juices" },
             { icon: Car, label: "Parking Available" },
             { icon: Music2, label: "Live Music Nights" },
             { icon: () => <span className="font-display text-xl text-gold">₹</span>, label: "₹800–1600 for two" },
@@ -219,6 +222,44 @@ function TasteeraHome() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      {/* MENU */}
+      <section id="menu" className="relative py-24 md:py-32">
+        <div className="mx-auto max-w-3xl px-6 text-center reveal">
+          <span className="gold-divider">The Menu</span>
+          <h2 className="mt-6 font-display text-4xl text-forest md:text-5xl text-balance">
+            Browse at your leisure.
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
+            A seasonal blend of Indian, Pan-Asian and Continental plates, paired with
+            barista coffee, mocktails and fresh-pressed juices.
+          </p>
+
+          <div className="mx-auto mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-8">
+            <a
+              href={foodMenuAsset.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 border-b border-gold/40 pb-1 text-sm uppercase tracking-[0.22em] text-forest transition hover:border-gold hover:text-terracotta"
+            >
+              <BookOpen className="h-4 w-4 text-gold" />
+              <span>Food Menu</span>
+              <span className="text-gold transition group-hover:translate-x-1">→</span>
+            </a>
+            <span aria-hidden className="hidden h-px w-10 bg-border sm:block" />
+            <a
+              href={drinksMenuAsset.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 border-b border-gold/40 pb-1 text-sm uppercase tracking-[0.22em] text-forest transition hover:border-gold hover:text-terracotta"
+            >
+              <GlassWater className="h-4 w-4 text-gold" />
+              <span>Drinks Menu</span>
+              <span className="text-gold transition group-hover:translate-x-1">→</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -292,8 +333,14 @@ function TasteeraHome() {
                 </InfoRow>
                 <InfoRow icon={Phone} title="Call">
                   <a href="tel:+917303336776" className="hover:text-gold">073033 36776</a>
+                  <span className="text-muted-foreground"> · </span>
+                  <a href="tel:+919217534918" className="hover:text-gold">092175 34918</a>
+                </InfoRow>
+                <InfoRow icon={Mail} title="Email">
+                  <a href="mailto:tasteera24@gmail.com" className="hover:text-gold">tasteera24@gmail.com</a>
                 </InfoRow>
               </div>
+
 
               <a
                 href="https://maps.google.com/?q=Tasteera+Cafe+Sector+31+Gurugram"
@@ -340,14 +387,20 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
   const links = [
     { href: "#about", label: "Story" },
     { href: "#ambiance", label: "Ambiance" },
+    { href: "#menu", label: "Menu" },
     { href: "#reservations", label: "Reserve" },
     { href: "#visit", label: "Visit" },
   ];
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/90 backdrop-blur-md shadow-soft" : "bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#top" className={`font-display text-2xl font-semibold tracking-wide transition-colors ${scrolled ? "text-forest" : "text-cream"}`}>
-          Tasteéra
+        <a href="#top" className="flex items-center gap-3" aria-label="Tasteera home">
+          <span className={`grid place-items-center overflow-hidden rounded-full ring-1 transition-all ${scrolled ? "h-11 w-11 bg-cream ring-forest/15" : "h-12 w-12 bg-cream/95 ring-cream/30 shadow-soft"}`}>
+            <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
+          </span>
+          <span className={`font-display text-xl font-semibold tracking-wide transition-colors ${scrolled ? "text-forest" : "text-cream"}`}>
+            Tasteéra
+          </span>
         </a>
         <nav className="hidden items-center gap-9 md:flex">
           {links.map((l) => (
@@ -386,11 +439,16 @@ function Footer() {
     <footer className="bg-forest text-cream/80">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="font-display text-3xl text-cream">Tasteéra</div>
+          <div className="flex items-center gap-3">
+            <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-full bg-cream ring-1 ring-cream/30">
+              <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
+            </span>
+            <div className="font-display text-3xl text-cream">Tasteéra</div>
+          </div>
           <p className="mt-4 max-w-sm text-sm text-cream/65">
             Cafe & Restaurant — where every plate tells a story. A warm, plant-filled corner of
-            Sector 31 serving Indian, Pan-Asian and Continental dishes alongside cocktails and
-            live music.
+            Sector 31 serving Indian, Pan-Asian and Continental dishes alongside barista coffee,
+            mocktails and live music.
           </p>
           <div className="mt-6 flex gap-3">
             {[Instagram, Facebook, Twitter].map((Icon, i) => (
@@ -406,6 +464,7 @@ function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><a href="#about" className="hover:text-cream">Our Story</a></li>
             <li><a href="#ambiance" className="hover:text-cream">Ambiance</a></li>
+            <li><a href="#menu" className="hover:text-cream">Menu</a></li>
             <li><a href="#reservations" className="hover:text-cream">Reservations</a></li>
             <li><a href="#visit" className="hover:text-cream">Visit Us</a></li>
           </ul>
@@ -418,7 +477,11 @@ function Footer() {
             SCO No. 40, Sector 31,<br/>
             Gurugram, Haryana 122001
           </address>
-          <a href="tel:+917303336776" className="mt-3 inline-block text-sm hover:text-gold">073033 36776</a>
+          <div className="mt-3 space-y-1 text-sm">
+            <a href="tel:+917303336776" className="block hover:text-gold">073033 36776</a>
+            <a href="tel:+919217534918" className="block hover:text-gold">092175 34918</a>
+            <a href="mailto:tasteera24@gmail.com" className="block hover:text-gold">tasteera24@gmail.com</a>
+          </div>
         </div>
       </div>
       <div className="border-t border-cream/10">
