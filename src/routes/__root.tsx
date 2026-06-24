@@ -59,6 +59,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "znKtJVabMgEd9Gz6Tp9wyvJZhuo7AjRjsWmHlTN_Nj4" },
       { title: "Tasteera Cafe & Restaurant — Where Every Plate Tells a Story" },
       { name: "description", content: "Upscale-casual dining in Sector 31, Gurugram. Indian, Pan-Asian & Continental cuisine, full bar and live music nights. Reserve your table." },
       { property: "og:title", content: "Tasteera Cafe & Restaurant — Where Every Plate Tells a Story" },
