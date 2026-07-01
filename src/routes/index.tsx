@@ -21,37 +21,37 @@ import {
 } from "lucide-react";
 
 import heroImg from "@/assets/hero_restaurant.jpg";
-import interiorAsset from "@/assets/tasteera_interior.asset.json";
-import pastaAsset from "@/assets/tasteera_pasta.asset.json";
-import brunchAsset from "@/assets/tasteera_brunch.asset.json";
+import interiorImg from "@/assets/tasteera_interior.webp";
+import pastaImg from "@/assets/tasteera_pasta.webp";
+import brunchImg from "@/assets/tasteera_brunch.webp";
 import ambLamps from "@/assets/ambiance_lamps.jpg";
 import ambTable from "@/assets/ambiance_table.jpg";
 import ambMusic from "@/assets/ambiance_music.jpg";
-import logoAsset from "@/assets/tasteera_logo.asset.json";
-import foodMenuAsset from "@/assets/tasteera_food_menu.asset.json";
-import drinksMenuAsset from "@/assets/tasteera_drinks_menu.asset.json";
-import foodMenuCover from "@/assets/tasteera_food_menu_cover.asset.json";
-import drinksMenuCover from "@/assets/tasteera_drinks_menu_cover.asset.json";
-import foodMenuPage1 from "@/assets/tasteera_food_menu_page_1.asset.json";
-import foodMenuPage2 from "@/assets/tasteera_food_menu_page_2.asset.json";
-import drinksMenuPage1 from "@/assets/tasteera_drinks_menu_page_1.asset.json";
-import drinksMenuPage2 from "@/assets/tasteera_drinks_menu_page_2.asset.json";
-import drinksMenuPage3 from "@/assets/tasteera_drinks_menu_page_3.asset.json";
-import drinksMenuPage4 from "@/assets/tasteera_drinks_menu_page_4.asset.json";
-import drinksMenuPage5 from "@/assets/tasteera_drinks_menu_page_5.asset.json";
-import drinksMenuPage6 from "@/assets/tasteera_drinks_menu_page_6.asset.json";
-import drinksMenuPage7 from "@/assets/tasteera_drinks_menu_page_7.asset.json";
-import drinksMenuPage8 from "@/assets/tasteera_drinks_menu_page_8.asset.json";
-import drinksMenuPage9 from "@/assets/tasteera_drinks_menu_page_9.asset.json";
-import drinksMenuPage10 from "@/assets/tasteera_drinks_menu_page_10.asset.json";
-import drinksMenuPage11 from "@/assets/tasteera_drinks_menu_page_11.asset.json";
-import drinksMenuPage12 from "@/assets/tasteera_drinks_menu_page_12.asset.json";
-import drinksMenuPage13 from "@/assets/tasteera_drinks_menu_page_13.asset.json";
-import drinksMenuPage14 from "@/assets/tasteera_drinks_menu_page_14.asset.json";
-import drinksMenuPage15 from "@/assets/tasteera_drinks_menu_page_15.asset.json";
-import drinksMenuPage16 from "@/assets/tasteera_drinks_menu_page_16.asset.json";
-import drinksMenuPage17 from "@/assets/tasteera_drinks_menu_page_17.asset.json";
-import drinksMenuPage18 from "@/assets/tasteera_drinks_menu_page_18.asset.json";
+import logo from "@/assets/tasteera_logo.jpeg";
+import foodMenu from "@/assets/tasteera_food_menu.pdf";
+import drinksMenu from "@/assets/tasteera_drinks_menu.pdf";
+import foodMenuCover from "@/assets/tasteera_food_menu_cover.jpg";
+import drinksMenuCover from "@/assets/tasteera_drinks_menu_cover.jpg";
+import foodMenuPage1 from "@/assets/tasteera_food_menu_page_1.jpg";
+import foodMenuPage2 from "@/assets/tasteera_food_menu_page_2.jpg";
+import drinksMenuPage1 from "@/assets/tasteera_drinks_menu_page_1.jpg";
+import drinksMenuPage2 from "@/assets/tasteera_drinks_menu_page_2.jpg";
+import drinksMenuPage3 from "@/assets/tasteera_drinks_menu_page_3.jpg";
+import drinksMenuPage4 from "@/assets/tasteera_drinks_menu_page_4.jpg";
+import drinksMenuPage5 from "@/assets/tasteera_drinks_menu_page_5.jpg";
+import drinksMenuPage6 from "@/assets/tasteera_drinks_menu_page_6.jpg";
+import drinksMenuPage7 from "@/assets/tasteera_drinks_menu_page_7.jpg";
+import drinksMenuPage8 from "@/assets/tasteera_drinks_menu_page_8.jpg";
+import drinksMenuPage9 from "@/assets/tasteera_drinks_menu_page_9.jpg";
+import drinksMenuPage10 from "@/assets/tasteera_drinks_menu_page_10.jpg";
+import drinksMenuPage11 from "@/assets/tasteera_drinks_menu_page_11.jpg";
+import drinksMenuPage12 from "@/assets/tasteera_drinks_menu_page_12.jpg";
+import drinksMenuPage13 from "@/assets/tasteera_drinks_menu_page_13.jpg";
+import drinksMenuPage14 from "@/assets/tasteera_drinks_menu_page_14.jpg";
+import drinksMenuPage15 from "@/assets/tasteera_drinks_menu_page_15.jpg";
+import drinksMenuPage16 from "@/assets/tasteera_drinks_menu_page_16.jpg";
+import drinksMenuPage17 from "@/assets/tasteera_drinks_menu_page_17.jpg";
+import drinksMenuPage18 from "@/assets/tasteera_drinks_menu_page_18.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -76,34 +76,34 @@ export const Route = createFileRoute("/")({
 });
 
 const galleryItems = [
-  { img: interiorAsset.url, label: "The Dining Room", span: "md:col-span-2 md:row-span-2" },
+  { img: interiorImg, label: "The Dining Room", span: "md:col-span-2 md:row-span-2" },
   { img: ambLamps, label: "Light & Greenery" },
-  { img: pastaAsset.url, label: "Plated With Care" },
+  { img: pastaImg, label: "Plated With Care" },
   { img: ambTable, label: "Set for the Evening" },
-  { img: brunchAsset.url, label: "Brunch Mornings" },
+  { img: brunchImg, label: "Brunch Mornings" },
   { img: ambMusic, label: "Live Music Nights", span: "md:col-span-2" },
 ];
 
-const foodMenuPages = [foodMenuPage1.url, foodMenuPage2.url];
+const foodMenuPages = [foodMenuPage1, foodMenuPage2];
 const drinksMenuPages = [
-  drinksMenuPage1.url,
-  drinksMenuPage2.url,
-  drinksMenuPage3.url,
-  drinksMenuPage4.url,
-  drinksMenuPage5.url,
-  drinksMenuPage6.url,
-  drinksMenuPage7.url,
-  drinksMenuPage8.url,
-  drinksMenuPage9.url,
-  drinksMenuPage10.url,
-  drinksMenuPage11.url,
-  drinksMenuPage12.url,
-  drinksMenuPage13.url,
-  drinksMenuPage14.url,
-  drinksMenuPage15.url,
-  drinksMenuPage16.url,
-  drinksMenuPage17.url,
-  drinksMenuPage18.url,
+  drinksMenuPage1,
+  drinksMenuPage2,
+  drinksMenuPage3,
+  drinksMenuPage4,
+  drinksMenuPage5,
+  drinksMenuPage6,
+  drinksMenuPage7,
+  drinksMenuPage8,
+  drinksMenuPage9,
+  drinksMenuPage10,
+  drinksMenuPage11,
+  drinksMenuPage12,
+  drinksMenuPage13,
+  drinksMenuPage14,
+  drinksMenuPage15,
+  drinksMenuPage16,
+  drinksMenuPage17,
+  drinksMenuPage18,
 ];
 
 type MenuDocument = {
@@ -118,18 +118,18 @@ type MenuDocument = {
 const menuDocuments: MenuDocument[] = [
   {
     icon: BookOpen,
-    label: "Drinks Menu",
+    label: "Food Menu",
     caption: "Indian · Pan-Asian · Continental",
-    cover: drinksMenuCover.url,
-    pdfUrl: foodMenuAsset.url,
+    cover: foodMenuCover,
+    pdfUrl: foodMenu,
     pages: foodMenuPages,
   },
   {
     icon: GlassWater,
-    label: "Food Menu",
+    label: "Drinks Menu",
     caption: "Coffee · Mocktails · Juices",
-    cover: foodMenuCover.url,
-    pdfUrl: drinksMenuAsset.url,
+    cover: drinksMenuCover,
+    pdfUrl: drinksMenu,
     pages: drinksMenuPages,
   },
 ];
@@ -602,7 +602,7 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
           <span
             className={`grid place-items-center overflow-hidden rounded-full ring-1 transition-all ${scrolled ? "h-11 w-11 bg-cream ring-forest/15" : "h-12 w-12 bg-cream/95 ring-cream/30 shadow-soft"}`}
           >
-            <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
+            <img src={logo} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
           </span>
           <span
             className={`font-display text-xl font-semibold tracking-wide transition-colors ${scrolled ? "text-forest" : "text-cream"}`}
@@ -669,7 +669,7 @@ function Footer() {
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
             <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-full bg-cream ring-1 ring-cream/30">
-              <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
+              <img src={logo} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
             </span>
             <div className="font-display text-3xl text-cream">Tasteéra</div>
           </div>
