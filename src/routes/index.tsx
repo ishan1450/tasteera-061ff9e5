@@ -602,7 +602,7 @@ function Nav({ open, setOpen, scrolled }: { open: boolean; setOpen: (v: boolean)
           <span
             className={`grid place-items-center overflow-hidden rounded-full ring-1 transition-all ${scrolled ? "h-11 w-11 bg-cream ring-forest/15" : "h-12 w-12 bg-cream/95 ring-cream/30 shadow-soft"}`}
           >
-            <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
+            <img src={logo} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
           </span>
           <span
             className={`font-display text-xl font-semibold tracking-wide transition-colors ${scrolled ? "text-forest" : "text-cream"}`}
@@ -669,7 +669,7 @@ function Footer() {
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
             <span className="grid h-12 w-12 place-items-center overflow-hidden rounded-full bg-cream ring-1 ring-cream/30">
-              <img src={logoAsset.url} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
+              <img src={logo} alt="Tasteera logo" className="h-full w-full object-cover scale-[1.35]" />
             </span>
             <div className="font-display text-3xl text-cream">Tasteéra</div>
           </div>
