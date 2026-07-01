@@ -76,34 +76,34 @@ export const Route = createFileRoute("/")({
 });
 
 const galleryItems = [
-  { img: interiorAsset.url, label: "The Dining Room", span: "md:col-span-2 md:row-span-2" },
+  { img: interiorImg, label: "The Dining Room", span: "md:col-span-2 md:row-span-2" },
   { img: ambLamps, label: "Light & Greenery" },
-  { img: pastaAsset.url, label: "Plated With Care" },
+  { img: pastaImg, label: "Plated With Care" },
   { img: ambTable, label: "Set for the Evening" },
-  { img: brunchAsset.url, label: "Brunch Mornings" },
+  { img: brunchImg, label: "Brunch Mornings" },
   { img: ambMusic, label: "Live Music Nights", span: "md:col-span-2" },
 ];
 
-const foodMenuPages = [foodMenuPage1.url, foodMenuPage2.url];
+const foodMenuPages = [foodMenuPage1, foodMenuPage2];
 const drinksMenuPages = [
-  drinksMenuPage1.url,
-  drinksMenuPage2.url,
-  drinksMenuPage3.url,
-  drinksMenuPage4.url,
-  drinksMenuPage5.url,
-  drinksMenuPage6.url,
-  drinksMenuPage7.url,
-  drinksMenuPage8.url,
-  drinksMenuPage9.url,
-  drinksMenuPage10.url,
-  drinksMenuPage11.url,
-  drinksMenuPage12.url,
-  drinksMenuPage13.url,
-  drinksMenuPage14.url,
-  drinksMenuPage15.url,
-  drinksMenuPage16.url,
-  drinksMenuPage17.url,
-  drinksMenuPage18.url,
+  drinksMenuPage1,
+  drinksMenuPage2,
+  drinksMenuPage3,
+  drinksMenuPage4,
+  drinksMenuPage5,
+  drinksMenuPage6,
+  drinksMenuPage7,
+  drinksMenuPage8,
+  drinksMenuPage9,
+  drinksMenuPage10,
+  drinksMenuPage11,
+  drinksMenuPage12,
+  drinksMenuPage13,
+  drinksMenuPage14,
+  drinksMenuPage15,
+  drinksMenuPage16,
+  drinksMenuPage17,
+  drinksMenuPage18,
 ];
 
 type MenuDocument = {
@@ -118,18 +118,18 @@ type MenuDocument = {
 const menuDocuments: MenuDocument[] = [
   {
     icon: BookOpen,
-    label: "Drinks Menu",
+    label: "Food Menu",
     caption: "Indian · Pan-Asian · Continental",
-    cover: drinksMenuCover.url,
-    pdfUrl: foodMenuAsset.url,
+    cover: foodMenuCover,
+    pdfUrl: foodMenu,
     pages: foodMenuPages,
   },
   {
     icon: GlassWater,
-    label: "Food Menu",
+    label: "Drinks Menu",
     caption: "Coffee · Mocktails · Juices",
-    cover: foodMenuCover.url,
-    pdfUrl: drinksMenuAsset.url,
+    cover: drinksMenuCover,
+    pdfUrl: drinksMenu,
     pages: drinksMenuPages,
   },
 ];
